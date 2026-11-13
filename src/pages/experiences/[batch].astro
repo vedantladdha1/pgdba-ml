@@ -14,13 +14,15 @@ export async function getStaticPaths() {
 }
 
 const { batches, current } = Astro.props;
-const { label, records } = current.data;
+const { label, publishedNote, records } = current.data;
 const isNarrative = records.length > 0 && records.every((r) => r.sourceFormat === "narrative");
 
 const numericAvg = (values: number[]) =>
   values.length ? (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1) : undefined;
 
-const writtenScores = records.map((r) => r.writtenScore).filter((v): v is number => v !== undefined);
+const writtenScores = records
+  .map((r) => r.writtenScore)
+  .filter((v): v is number => typeof v === "number");
 const avgWritten = numericAvg(writtenScores);
 ---
 
@@ -34,6 +36,12 @@ const avgWritten = numericAvg(writtenScores);
         {records.length} interview experience{records.length === 1 ? "" : "s"}
         {avgWritten && <> · avg. written score {avgWritten}</>}
       </p>
+
+      {publishedNote && (
+        <p class="mt-4 rounded-xl border border-amber-300/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
+          {publishedNote}
+        </p>
+      )}
 
       {!isNarrative && records.length > 0 && (
         <div class="mt-5 max-w-sm">

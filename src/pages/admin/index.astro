@@ -180,6 +180,7 @@ const batchSummaries = batches.map((b) => ({
     { value: "pgCollege", label: "Post-graduation college" },
     { value: "pgStream", label: "Post-graduation stream" },
     { value: "pgYear", label: "Post-graduation year" },
+    { value: "mastersDegree", label: "Master's degree" },
     { value: "workExMonths", label: "Work experience (duration)" },
     { value: "workExBackground", label: "Work experience background" },
     { value: "organizations", label: "Organizations" },
@@ -544,6 +545,7 @@ const batchSummaries = batches.map((b) => ({
       const batchDoc: Batch = {
         batch: selectedBatch,
         label: existingBatchFile?.data.label ?? `Batch ${selectedBatch}`,
+        publishedNote: existingBatchFile?.data.publishedNote,
         records: validRecords,
       };
       const parsed = batchSchema.safeParse(batchDoc);
