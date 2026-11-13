@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "migrate": "tsx scripts/migrate-html-batches.ts",
-    "validate-data": "tsx scripts/validate-data.ts"
+    "validate-data": "tsx scripts/validate-data.ts",
+    "import-2026-28": "tsx scripts/import-2026-28.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

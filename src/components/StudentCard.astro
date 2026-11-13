@@ -21,6 +21,7 @@ const infoGrid: Array<{ label: string; value?: string }> = [
   { label: "Background", value: r.ugBackground },
   { label: "Graduation year", value: r.gradYear },
   { label: "Stream", value: r.gradStream },
+  { label: "Master's degree", value: r.mastersDegree },
   { label: "Post-graduation", value: [r.pgCollege, r.pgStream].filter(Boolean).join(", ") || undefined },
   { label: "Work experience", value: [r.workExMonths, r.workExBackground].filter(Boolean).join(" · ") || undefined },
   { label: "Organizations", value: r.organizations },

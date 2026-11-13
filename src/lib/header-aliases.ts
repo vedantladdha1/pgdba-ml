@@ -64,6 +64,9 @@ export const HEADER_ALIASES: Record<string, string> = {
   "post graduation year": "pgYear",
   "pg year": "pgYear",
   "year of post graduation": "pgYear",
+  "master's degree": "mastersDegree",
+  "masters degree": "mastersDegree",
+  "master’s degree": "mastersDegree",
 
   // work experience
   "work experience": "workExMonths",

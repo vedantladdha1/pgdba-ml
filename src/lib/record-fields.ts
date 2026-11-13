@@ -34,6 +34,12 @@ export function coerceFieldValue(field: string, rawValue: string): string | numb
   }
 
   if (NUMERIC_FIELDS.has(field)) {
+    if (
+      (field === "writtenScore" || field === "preInterviewScore") &&
+      !/^[+-]?\d+(?:\.\d+)?$/.test(v)
+    ) {
+      return v;
+    }
     const n = Number(v.replace(/[^\d.]/g, ""));
     if (Number.isNaN(n)) return undefined;
     // A literal 0 on any of these scales means "left blank" in practice.
