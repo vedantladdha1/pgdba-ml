@@ -3,5 +3,21 @@ import { getLatestBatch } from "../../lib/batches";
 import { withBase } from "../../lib/url";
 
 const latest = await getLatestBatch();
-return Astro.redirect(withBase(`/experiences/${latest.data.batch}/`));
+const target = withBase(`/experiences/${latest.data.batch}/`);
 ---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <title>Interview Experiences · PGDBA</title>
+    <script is:inline define:vars={{ target }}>
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+    <p>Opening the latest interview experiences. <a href={target}>Continue to {latest.data.label}</a>.</p>
+  </body>
+</html>
