@@ -4,27 +4,24 @@
   --font-display: "Playfair Display", ui-serif, Georgia, serif;
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
 
-  --color-brand-50: #fdf1ef;
-  --color-brand-100: #fbe0db;
-  --color-brand-200: #f6c0b6;
-  --color-brand-300: #ec9484;
-  --color-brand-400: #dd6852;
-  --color-brand-500: #c8492f;
-  --color-brand-600: #ab3722;
-  --color-brand-700: #8a2c1c;
-  --color-brand-800: #6f2519;
-  --color-brand-900: #5c2015;
+  --color-brand-50: #f2f8fc;
+  --color-brand-100: #e2f0f8;
+  --color-brand-200: #c2dfef;
+  --color-brand-300: #9dc9df;
+  --color-brand-400: #75afcc;
+  --color-brand-500: #4e92b3;
+  --color-brand-600: #3b7594;
+  --color-brand-700: #315f78;
+  --color-brand-800: #284c60;
+  --color-brand-900: #1d3949;
 
-  /* Fixed dark "chrome" scale — navbar, footer, and hero bands render in these
-     regardless of the light/dark toggle (an always-dark frame around the
-     theme-reactive ink-* content panels), matching the reference site's layout. */
-  --color-noir-950: #0e1114;
-  --color-noir-900: #14181d;
-  --color-noir-800: #1e242b;
-  --color-noir-700: #2b323b;
-  --color-noir-400: #7c8794;
-  --color-noir-200: #c7ced6;
-  --color-noir-50: #f7f8f9;
+  --color-noir-950: #568eae;
+  --color-noir-900: #ffffff;
+  --color-noir-800: #eaf3f8;
+  --color-noir-700: #d3e4ee;
+  --color-noir-400: #727b86;
+  --color-noir-200: #4b5563;
+  --color-noir-50: #171c22;
 
   --color-ink-50: #f6f7f8;
   --color-ink-100: #eceef1;
@@ -38,9 +35,9 @@
   --color-ink-900: #171c22;
 
   --color-tint-blue: #eaf4fb;
-  --color-tint-blue-deep: #cfe6f5;
+  --color-tint-blue-deep: #c2dfef;
 
-  --color-paper: #fbfaf7;
+  --color-paper: #ffffff;
 }
 
 /* Dark theme: overrides the same design tokens rather than adding `dark:` variants
@@ -48,12 +45,24 @@
    custom properties. Applied via a `.dark` class on <html>, toggled in Navbar.astro
    and set as early as possible in BaseLayout.astro to avoid a flash of the wrong theme. */
 :root.dark {
-  --color-brand-50: #2a140f;
-  --color-brand-100: #3a1b14;
-  --color-brand-200: #4d2419;
-  --color-brand-300: #7a3527;
-  --color-brand-700: #f0806a;
-  --color-brand-800: #f5a08f;
+  --color-noir-950: #0e1114;
+  --color-noir-900: #14181d;
+  --color-noir-800: #1e242b;
+  --color-noir-700: #2b323b;
+  --color-noir-400: #7c8794;
+  --color-noir-200: #c7ced6;
+  --color-noir-50: #f7f8f9;
+
+  --color-brand-50: #14242d;
+  --color-brand-100: #1b303c;
+  --color-brand-200: #234054;
+  --color-brand-300: #335b73;
+  --color-brand-400: #68a6c4;
+  --color-brand-500: #4e92b3;
+  --color-brand-600: #3b7594;
+  --color-brand-700: #a4d5e9;
+  --color-brand-800: #c2dfef;
+  --color-brand-900: #d8edf7;
 
   --color-ink-50: #212832;
   --color-ink-100: #2a323d;

@@ -1,6 +1,6 @@
 /**
  * One-time migration: parses the 11 archived WordPress HTML exports (4 different historical
- * formats — see .plan/02-data-model-and-migration.md) into src/data/batches/<batch>.json,
+ * formats - see .plan/02-data-model-and-migration.md) into src/data/batches/<batch>.json,
  * validated against the shared schema. Re-runnable any time the archive needs to be
  * re-processed (e.g. after fixing an adapter bug).
  *
@@ -156,7 +156,7 @@ function parseNarrative(html: string, batch: string): InterviewRecord[] {
 }
 
 // ---------------------------------------------------------------------------
-// Format B: table-stacked (2018-20) — one <table> per student, label row then value row
+// Format B: table-stacked (2018-20) - one <table> per student, label row then value row
 // ---------------------------------------------------------------------------
 function parseTableStacked(html: string, batch: string): InterviewRecord[] {
   const $ = cheerio.load(html);
@@ -175,7 +175,7 @@ function parseTableStacked(html: string, batch: string): InterviewRecord[] {
         pendingLabel = cellText;
       } else if (pendingLabel) {
         const normLabel = normalizeHeader(pendingLabel);
-        // "Work Experience" here is a Yes/No gate, not a duration — the real duration comes
+        // "Work Experience" here is a Yes/No gate, not a duration - the real duration comes
         // from the following "If Yes, then total Work Experience..." row, so skip the gate row
         // to avoid it clobbering workExMonths with the literal text "Yes"/"No".
         const isYesNoGate = normLabel === "work experience" && /^(yes|no)$/i.test(cellText);
@@ -200,7 +200,7 @@ function parseTableStacked(html: string, batch: string): InterviewRecord[] {
 }
 
 // ---------------------------------------------------------------------------
-// Format C: table-kv (2019-21 .. 2024-26) — one <table> per student, 2 columns (label|value).
+// Format C: table-kv (2019-21 .. 2024-26) - one <table> per student, 2 columns (label|value).
 // Two sub-variants seen in the archive:
 //  - 2023-25 / 2024-26: name is in a preceding <h2 class="wp-block-heading"> within the same
 //    .wp-block-group wrapper.
@@ -246,7 +246,7 @@ function parseTableKv(html: string, batch: string): InterviewRecord[] {
 }
 
 // ---------------------------------------------------------------------------
-// Format D: card-grid (2025-27) — .student-card divs with .data-label/.data-value pairs
+// Format D: card-grid (2025-27) - .student-card divs with .data-label/.data-value pairs
 // ---------------------------------------------------------------------------
 function parseCardGrid(html: string, batch: string): InterviewRecord[] {
   const $ = cheerio.load(html);
@@ -293,11 +293,11 @@ function parseCardGrid(html: string, batch: string): InterviewRecord[] {
 }
 
 // ---------------------------------------------------------------------------
-// Format A-variant: numbered-list narrative (2017-19 only) — each student starts with
+// Format A-variant: numbered-list narrative (2017-19 only) - each student starts with
 // "<b>N. Name </b>: Student Name" followed by <ol>/<ul> Q&A lists, no <i> bio markers and
 // no tables at all. Rather than a fragile per-<li> parser (the <ol start="N"> numbering
 // resets unpredictably and nesting is irregular), each student's whole block is kept as one
-// flowing "story" — faithful to the source and renders fine via NarrativeArticle.
+// flowing "story" - faithful to the source and renders fine via NarrativeArticle.
 // ---------------------------------------------------------------------------
 function parseNumberedList(html: string, batch: string): InterviewRecord[] {
   // Two variants seen in the source: "<b>N. Name </b><span>: </span><span>Student</span>"

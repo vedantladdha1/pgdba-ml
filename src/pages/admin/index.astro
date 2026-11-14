@@ -16,7 +16,7 @@ const batchSummaries = batches.map((b) => ({
       <h1 class="font-display text-3xl font-semibold text-ink-900">Committee Admin</h1>
       <p class="mt-2 text-ink-600">
         Upload a batch's interview-experience Excel export, review how it will look, and
-        publish it as a pull request — no server, no database, just this page talking directly
+        publish it as a pull request - no server, no database, just this page talking directly
         to GitHub.
       </p>
     </header>
@@ -93,7 +93,7 @@ const batchSummaries = batches.map((b) => ({
             <span id="new-batch-preview" class="whitespace-nowrap rounded-lg bg-ink-100 px-3 py-2 text-sm font-semibold text-ink-800"></span>
           </div>
           <p class="mt-1 text-xs text-ink-500">
-            Pick the year this batch joined PGDBA — the batch code is generated automatically
+            Pick the year this batch joined PGDBA - the batch code is generated automatically
             (the program is 2 years).
           </p>
         </div>
@@ -150,7 +150,7 @@ const batchSummaries = batches.map((b) => ({
     <div id="step-done" hidden class="mt-6 rounded-3xl border border-brand-200 bg-brand-50 p-6 text-center shadow-sm">
       <h2 class="font-display text-xl font-semibold text-brand-800">Pull request opened 🎉</h2>
       <p class="mt-2 text-sm text-ink-700">
-        Nothing is live yet — review and merge the PR on GitHub to publish this batch.
+        Nothing is live yet - review and merge the PR on GitHub to publish this batch.
       </p>
       <a id="pr-link" href="#" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">
         View pull request ↗
@@ -169,7 +169,7 @@ const batchSummaries = batches.map((b) => ({
   import * as gh from "../../lib/github-api";
 
   const FIELD_OPTIONS: Array<{ value: string; label: string }> = [
-    { value: "", label: "— Ignore this column —" },
+    { value: "", label: "- Ignore this column -" },
     { value: "name", label: "Name" },
     { value: "rollNumber", label: "Roll number" },
     { value: "linkUrl", label: "LinkedIn / profile URL" },
@@ -186,16 +186,16 @@ const batchSummaries = batches.map((b) => ({
     { value: "organizations", label: "Organizations" },
     { value: "writtenScore", label: "Written test score" },
     { value: "preInterviewScore", label: "Pre-interview score" },
-    { value: "resourcesWritten", label: "Resources — written exam" },
-    { value: "resourcesInterview", label: "Resources — interview" },
+    { value: "resourcesWritten", label: "Resources - written exam" },
+    { value: "resourcesInterview", label: "Resources - interview" },
     { value: "priorCoding", label: "Prior coding experience" },
-    { value: "alternatePrograms", label: "Alternate programs" },
+    { value: "alternatePrograms", label: "Other Converts" },
     { value: "offers", label: "Offers received" },
-    { value: "questions.general", label: "Questions — general / profile" },
-    { value: "questions.mathStats", label: "Questions — maths & stats" },
-    { value: "questions.coding", label: "Questions — coding / ML" },
-    { value: "questions.gk", label: "Questions — GK / current affairs" },
-    { value: "questions.logical", label: "Questions — logical / puzzles" },
+    { value: "questions.general", label: "Questions - general / profile" },
+    { value: "questions.mathStats", label: "Questions - maths & stats" },
+    { value: "questions.coding", label: "Questions - coding / ML" },
+    { value: "questions.gk", label: "Questions - GK / current affairs" },
+    { value: "questions.logical", label: "Questions - logical / puzzles" },
     { value: "interviewDifficulty", label: "Interview difficulty (1-5)" },
     { value: "writtenDifficulty", label: "Written exam difficulty (1-5)" },
     { value: "tips", label: "Tips for aspirants" },
@@ -301,7 +301,7 @@ const batchSummaries = batches.map((b) => ({
       stepUpload.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (err) {
       if (err instanceof gh.GitHubApiError && err.status === 401) {
-        showError(connectError, "That token was rejected — check it's valid and hasn't expired.");
+        showError(connectError, "That token was rejected - check it's valid and hasn't expired.");
       } else if (err instanceof gh.GitHubApiError && err.status === 404) {
         showError(connectError, "Repository not found (or this token can't access it).");
       } else {
@@ -348,7 +348,7 @@ const batchSummaries = batches.map((b) => ({
       const alreadyExists = existingBatchCodes.has(code);
       const option = document.createElement("option");
       option.value = String(year);
-      option.textContent = alreadyExists ? `${year} (${code} — already published)` : String(year);
+      option.textContent = alreadyExists ? `${year} (${code} - already published)` : String(year);
       newBatchYearSelect.appendChild(option);
       if (!alreadyExists && defaultYear === null) defaultYear = year;
     }
@@ -379,7 +379,7 @@ const batchSummaries = batches.map((b) => ({
       if (existingBatchCodes.has(selectedBatch)) {
         showError(
           uploadError,
-          `Batch ${selectedBatch} is already published — pick it from the dropdown above to update it instead of adding it as new.`
+          `Batch ${selectedBatch} is already published - pick it from the dropdown above to update it instead of adding it as new.`
         );
         return;
       }
@@ -483,7 +483,7 @@ const batchSummaries = batches.map((b) => ({
         invalidCount += 1;
         const msg = document.createElement("p");
         msg.className = "text-sm text-red-600";
-        msg.textContent = `Row ${i + 2}: ${parsed.error.issues.map((iss) => iss.message).join("; ")} — skipped.`;
+        msg.textContent = `Row ${i + 2}: ${parsed.error.issues.map((iss) => iss.message).join("; ")} - skipped.`;
         previewErrors.appendChild(msg);
       }
     });
@@ -549,7 +549,7 @@ const batchSummaries = batches.map((b) => ({
         records: validRecords,
       };
       const parsed = batchSchema.safeParse(batchDoc);
-      if (!parsed.success) throw new Error("Parsed data failed final validation — check the mapping.");
+      if (!parsed.success) throw new Error("Parsed data failed final validation - check the mapping.");
 
       publishStatus.textContent = "Creating branch…";
       const baseSha = await gh.getBranchSha(config, defaultBranch);

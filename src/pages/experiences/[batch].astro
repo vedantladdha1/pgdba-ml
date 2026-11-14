@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 const { batches, current } = Astro.props;
 const { label, publishedNote, records } = current.data;
 const isNarrative = records.length > 0 && records.every((r) => r.sourceFormat === "narrative");
+const initialVisibleExperiences = 6;
 
 const numericAvg = (values: number[]) =>
   values.length ? (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1) : undefined;
@@ -29,49 +30,72 @@ const avgWritten = numericAvg(writtenScores);
 <BaseLayout title={`${label} · Interview Experiences`}>
   <BatchSwitcher batches={batches} activeBatch={current.data.batch} />
 
-  <header class="border-b border-noir-700 bg-noir-900">
-    <div class="mx-auto max-w-6xl px-5 py-10">
-      <h1 class="font-display text-4xl font-semibold text-noir-50">{label}<span class="text-brand-500">.</span></h1>
-      <p class="mt-2 text-sm text-noir-200">
-        {records.length} interview experience{records.length === 1 ? "" : "s"}
-        {avgWritten && <> · avg. written score {avgWritten}</>}
-      </p>
-
-      {publishedNote && (
-        <p class="mt-4 rounded-xl border border-amber-300/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
-          {publishedNote}
-        </p>
-      )}
-
-      {!isNarrative && records.length > 0 && (
-        <div class="mt-5 max-w-sm">
-          <label for="search" class="sr-only">Search this batch</label>
-          <input
-            id="search"
-            type="search"
-            placeholder="Search by name, college, or stream…"
-            class="w-full rounded-full border border-noir-700 bg-noir-800/60 px-4 py-2 text-sm text-noir-50 placeholder:text-noir-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-600/30"
-          />
+  <header class="relative overflow-hidden border-b border-noir-700 bg-gradient-to-br from-noir-900 via-noir-900 to-noir-950">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(86,142,174,0.65),_transparent_60%)]"></div>
+    <div class="relative mx-auto max-w-6xl px-5 py-10 sm:py-12">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-400">Interview experiences</p>
+        <h1 class="mt-2 font-display text-4xl font-semibold tracking-tight text-noir-50 sm:text-5xl">{label}<span class="text-brand-500">.</span></h1>
+        <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+          <div class="flex flex-wrap gap-3">
+            <div class="rounded-xl border border-noir-700 bg-noir-800/70 px-4 py-3">
+              <p class="font-display text-xl font-semibold text-noir-50">{records.length}</p>
+              <p class="text-xs text-noir-200">Interview experiences</p>
+            </div>
+            {avgWritten && (
+              <div class="rounded-xl border border-noir-700 bg-noir-800/70 px-4 py-3">
+                <p class="font-display text-xl font-semibold text-noir-50">{avgWritten}</p>
+                <p class="text-xs text-noir-200">Average written score</p>
+              </div>
+            )}
+          </div>
+          {!isNarrative && records.length > 0 && (
+            <div class="w-full sm:w-96 sm:self-center">
+              <label for="search" class="sr-only">Search this batch</label>
+              <input
+                id="search"
+                type="search"
+                placeholder="Search name, college, stream, or work domain…"
+                class="w-full rounded-full border border-noir-700 bg-noir-800/60 px-4 py-3 text-sm text-noir-50 placeholder:text-noir-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-600/30"
+              />
+            </div>
+          )}
         </div>
-      )}
+        {publishedNote && (
+          <p class="mt-4 rounded-xl border border-amber-300/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
+            {publishedNote}
+          </p>
+        )}
+      </div>
+
     </div>
   </header>
 
-  <section class="mx-auto max-w-6xl px-5 py-10">
+  <section id="experiences-list" class="mx-auto max-w-6xl scroll-mt-24 px-5 py-10">
     {records.length === 0 && (
       <p class="text-center text-ink-500">No records found for this batch yet.</p>
     )}
 
     {isNarrative ? (
       <div class="mx-auto flex max-w-3xl flex-col gap-6">
-        {records.map((r) => <NarrativeArticle record={r} />)}
+        {records.map((r, index) => (
+          <div
+            class="experience-card"
+            data-record-index={index}
+            hidden={index >= initialVisibleExperiences}
+          >
+            <NarrativeArticle record={r} />
+          </div>
+        ))}
       </div>
     ) : (
       <div id="card-grid" class="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        {records.map((r) => (
+        {records.map((r, index) => (
           <div
-            class="experience-card"
-            data-search={`${r.name} ${r.ugCollege ?? ""} ${r.gradStream ?? ""} ${r.workExBackground ?? ""}`.toLowerCase()}
+            class="experience-card h-full"
+            data-search={`${r.name} ${r.ugCollege ?? ""} ${r.gradStream ?? ""} ${r.workExBackground ?? ""} ${r.workExMonths ?? ""} ${r.organizations ?? ""}`}
+            data-record-index={index}
+            hidden={index >= initialVisibleExperiences}
           >
             <StudentCard record={r} />
           </div>
@@ -82,6 +106,18 @@ const avgWritten = numericAvg(writtenScores);
     <p id="no-results" hidden class="py-10 text-center text-ink-500">
       No profiles match your search.
     </p>
+    {records.length > initialVisibleExperiences && (
+      <div class="mt-8 text-center">
+        <button
+          id="experiences-toggle"
+          type="button"
+          aria-expanded="false"
+          class="rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold !text-white shadow-sm transition-colors hover:bg-brand-700"
+        >
+          Show more students
+        </button>
+      </div>
+    )}
   </section>
 </BaseLayout>
 
@@ -89,15 +125,46 @@ const avgWritten = numericAvg(writtenScores);
   const input = document.getElementById("search") as HTMLInputElement | null;
   const cards = Array.from(document.querySelectorAll<HTMLElement>(".experience-card"));
   const noResults = document.getElementById("no-results");
+  const toggleButton = document.getElementById("experiences-toggle") as HTMLButtonElement | null;
+  const initialVisibleCount = 6;
+  let expanded = false;
 
-  input?.addEventListener("input", () => {
-    const q = input.value.trim().toLowerCase();
+  function normalizeSearchValue(value: string) {
+    return value
+      .toLowerCase()
+      .replace(/\bnational institute of (?:information )?technology\b/g, "nit")
+      .replace(/\bindian institute of (?:information )?technology\b/g, "iit")
+      .replace(/\bnit\b/g, "nit")
+      .replace(/\biit\b/g, "iit")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function updateExperiences() {
+    const q = normalizeSearchValue(input?.value ?? "");
+    const hasQuery = Boolean(q);
     let visible = 0;
-    for (const card of cards) {
-      const matches = !q || (card.dataset.search ?? "").includes(q);
-      card.hidden = !matches;
-      if (matches) visible += 1;
+    for (const [index, card] of cards.entries()) {
+      const matches = !q || normalizeSearchValue(card.dataset.search ?? "").includes(q);
+      const withinLimit = expanded || hasQuery || index < initialVisibleCount;
+      card.hidden = !matches || !withinLimit;
+      if (!card.hidden) visible += 1;
     }
     if (noResults) noResults.hidden = visible !== 0 || cards.length === 0;
+    if (toggleButton) {
+      toggleButton.hidden = hasQuery;
+      toggleButton.textContent = expanded ? "Show fewer students" : "Show more students";
+      toggleButton.setAttribute("aria-expanded", String(expanded));
+    }
+  }
+
+  input?.addEventListener("input", updateExperiences);
+  toggleButton?.addEventListener("click", () => {
+    expanded = !expanded;
+    updateExperiences();
+    if (!expanded) {
+      document.getElementById("experiences-list")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
+  updateExperiences();
 </script>

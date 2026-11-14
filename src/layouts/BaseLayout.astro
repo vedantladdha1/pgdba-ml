@@ -9,7 +9,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "PGDBA — Post Graduate Diploma in Business Analytics. A joint program of ISI Kolkata, IIM Calcutta, and IIT Kharagpur." } = Astro.props;
+const { title, description = "PGDBA - Post Graduate Diploma in Business Analytics. A joint program of ISI Kolkata, IIM Calcutta, and IIT Kharagpur." } = Astro.props;
 const ogImage = new URL(withBase("/images/3_institute_logo.jpg"), Astro.site);
 ---
 
@@ -20,14 +20,14 @@ const ogImage = new URL(withBase("/images/3_institute_logo.jpg"), Astro.site);
     <script is:inline>
       // Runs before first paint so the page never flashes the wrong theme.
       (function () {
+        document.documentElement.classList.add("dark");
         try {
           const stored = localStorage.getItem("pgdba-theme");
-          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          if (stored === "dark" || (!stored && prefersDark)) {
-            document.documentElement.classList.add("dark");
+          if (stored === "light") {
+            document.documentElement.classList.remove("dark");
           }
         } catch {
-          // localStorage unavailable (e.g. private browsing) — default to light.
+          // localStorage unavailable (e.g. private browsing) - keep the dark default.
         }
       })();
     </script>

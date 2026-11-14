@@ -1,5 +1,5 @@
 /**
- * Thin wrapper around the GitHub REST API, called directly from the browser on /admin/ — this
+ * Thin wrapper around the GitHub REST API, called directly from the browser on /admin/ - this
  * IS the "backend" for the admin CMS (see .plan/04-admin-cms.md). The PAT is supplied by the
  * admin and never leaves the browser except to api.github.com.
  */
@@ -36,7 +36,7 @@ async function gh(config: GitHubConfig, path: string, init: RequestInit = {}) {
       const body = await res.json();
       if (body?.message) message = body.message;
     } catch {
-      // ignore — use the status text
+      // ignore - use the status text
     }
     throw new GitHubApiError(res.status, message);
   }
@@ -44,7 +44,7 @@ async function gh(config: GitHubConfig, path: string, init: RequestInit = {}) {
 }
 
 /** The Contents API wants each path segment percent-encoded but the "/" separators literal
- *  — encodeURIComponent(wholePath) would turn "/" into "%2F" and break routing. */
+ *  - encodeURIComponent(wholePath) would turn "/" into "%2F" and break routing. */
 function encodePath(path: string): string {
   return path.split("/").map(encodeURIComponent).join("/");
 }

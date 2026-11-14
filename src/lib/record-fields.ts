@@ -2,7 +2,7 @@
  * Pure, framework-free helpers for turning a raw {field, value} pair into a properly-typed
  * value on an InterviewRecord. Shared by scripts/migrate-html-batches.ts (parsing the
  * archived HTML) and the admin CMS (parsing an uploaded Excel file) so both paths apply the
- * exact same coercion rules. No Node-only APIs here — this file is bundled for the browser.
+ * exact same coercion rules. No Node-only APIs here - this file is bundled for the browser.
  */
 import type { InterviewRecord } from "./schema";
 
