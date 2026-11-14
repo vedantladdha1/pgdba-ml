@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { curriculum } from "../../data/curriculum";
+import { institutes } from "../../data/institutes";
+import { withBase } from "../../lib/url";
+
+export function getStaticPaths() {
+  return institutes.map((institute) => ({
+    params: { slug: institute.slug },
+    props: { institute },
+  }));
+}
+
+const { institute } = Astro.props;
+const modules = curriculum.filter((module) => module.instituteSlug === institute.slug);
+---
+
+<BaseLayout
+  title={institute.shortName}
+  description={`${institute.name} contributes ${institute.focus.toLowerCase()} to the PGDBA programme.`}
+>
+  <section class="relative overflow-hidden bg-gradient-to-b from-noir-900 via-noir-900 to-noir-950">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(86,142,174,0.65),_transparent_60%)]"></div>
+    <div class="relative mx-auto max-w-4xl px-5 py-16 sm:py-20">
+      <a href={withBase("/institutes/")} class="text-sm font-semibold text-brand-400 hover:text-brand-300">
+        ← Explore the three institutes
+      </a>
+      <p class="mt-8 text-sm font-semibold uppercase tracking-[0.18em] text-brand-400">{institute.location}</p>
+      <h1 class="mt-3 font-display text-4xl font-semibold tracking-tight text-noir-50 sm:text-5xl">
+        {institute.name}<span class="text-brand-500">.</span>
+      </h1>
+      <p class="mt-4 text-xl font-medium text-noir-200">{institute.focus}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl space-y-8 px-5 py-12 sm:py-16">
+    <article class="rounded-3xl bg-white p-6 shadow-sm sm:p-10">
+      <h2 class="font-display text-2xl font-semibold text-ink-900">The institute's role in PGDBA<span class="text-brand-600">.</span></h2>
+      <p class="mt-4 leading-relaxed text-ink-700">{institute.introduction}</p>
+      <p class="mt-4 leading-relaxed text-ink-700">{institute.contribution}</p>
+      <a
+        href={institute.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6 inline-flex font-semibold text-brand-700 hover:text-brand-800"
+      >
+        Visit the official institute website <span aria-hidden="true" class="ml-1">↗</span>
+      </a>
+    </article>
+
+    <div class="space-y-5">
+      <h2 class="font-display text-2xl font-semibold text-ink-900">Curriculum at {institute.shortName}<span class="text-brand-600">.</span></h2>
+      {modules.map((module) => (
+        <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wider text-brand-700">{module.location}</p>
+              <h3 class="mt-1 font-display text-xl font-semibold text-ink-900">{module.label}</h3>
+              <p class="mt-2 text-ink-700">{module.overview}</p>
+            </div>
+            <a
+              href={withBase(`/academics/#${module.id}`)}
+              class="shrink-0 font-semibold text-brand-700 hover:text-brand-800"
+            >
+              Full catalogue <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <ul class="mt-5 grid gap-2 sm:grid-cols-2">
+            {module.courses.slice(0, 6).map((course) => (
+              <li class="rounded-xl bg-ink-50 px-4 py-3 text-sm text-ink-800">{course.name}</li>
+            ))}
+            {module.courses.length > 6 && (
+              <li class="rounded-xl bg-ink-50 px-4 py-3 text-sm font-semibold text-brand-700">
+                And {module.courses.length - 6} more in the full catalogue
+              </li>
+            )}
+          </ul>
+        </article>
+      ))}
+      <p class="rounded-2xl border border-brand-200 bg-brand-50 p-4 text-sm leading-relaxed text-ink-700">
+        Course names and elective availability shown here are based on a supplied reference list and have not been independently verified against the latest approved curriculum. Offerings may vary by batch.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

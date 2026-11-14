@@ -2,102 +2,244 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StatStrip from "../components/StatStrip.astro";
 import { getSiteStats, getLatestBatch } from "../lib/batches";
+import { curriculum } from "../data/curriculum";
 import { withBase } from "../lib/url";
 
 const stats = await getSiteStats();
 const latest = await getLatestBatch();
+
+const destinations = [
+  {
+    eyebrow: "Learn about the programme",
+    title: "The PGDBA experience",
+    description: "Explore the three institutes and the academic journey that connects them.",
+    href: "/institutes/",
+    link: "Explore the institutes",
+  },
+  {
+    eyebrow: "Plan your application",
+    title: "Eligibility & admissions",
+    description: "Review the eligibility and selection criteria for 2026 admissions.",
+    href: "/eligibility/",
+    link: "View eligibility",
+  },
+  {
+    eyebrow: "Explore the coursework",
+    title: "Academics & curriculum",
+    description: "Browse the semester-wise course catalogue and programme structure.",
+    href: "/academics/",
+    link: "Explore academics",
+  },
+  {
+    eyebrow: "Prepare with real stories",
+    title: "Interview experiences",
+    description: "Learn from candid experiences shared by students across PGDBA batches.",
+    href: "/experiences/",
+    link: "Browse experiences",
+  },
+  {
+    eyebrow: "Student life",
+    title: "Teams",
+    description: "Meet the student teams contributing to the PGDBA community.",
+    href: "/clubs/",
+    link: "Discover the clubs",
+  },
+  {
+    eyebrow: "Find an answer",
+    title: "FAQs",
+    description: "Get quick answers to common questions about the programme.",
+    href: "/faqs/",
+    link: "Read the FAQs",
+  },
+] as const;
 ---
 
-<BaseLayout title="About">
-  <!-- Hero -->
-  <section class="relative overflow-hidden bg-gradient-to-b from-noir-900 via-noir-900 to-noir-950">
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(171,55,34,0.18),_transparent_60%)]"></div>
-    <div class="relative mx-auto max-w-4xl px-5 py-20 text-center sm:py-28">
-      <img src={withBase("/images/logo.png")} alt="PGDBA logo" class="mx-auto mb-6 h-20 w-20" width="80" height="80" />
-      <h1 class="font-display text-5xl font-semibold tracking-tight text-noir-50 sm:text-6xl">
-        Post Graduate Diploma in <span class="text-brand-400">Business Analytics</span><span class="text-brand-500">.</span>
-      </h1>
-      <p class="mx-auto mt-5 max-w-2xl text-balance text-lg text-noir-200">
-        A joint program of the Indian Statistical Institute Kolkata, IIM Calcutta, and IIT
-        Kharagpur — training analytics leaders through a rigorous, data-driven curriculum.
-      </p>
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-        <a
-          href={withBase("/experiences/")}
-          class="rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
-        >
-          Read Interview Experiences
-        </a>
-        <a
-          href={withBase(`/experiences/${latest.data.batch}/`)}
-          class="rounded-full border border-noir-700 bg-noir-800/60 px-6 py-3 text-sm font-semibold text-noir-50 transition-colors hover:border-brand-400 hover:text-brand-300"
-        >
-          Latest batch: {latest.data.batch}
-        </a>
+<BaseLayout
+  title="PGDBA | Business Analytics"
+  description="Explore the Post Graduate Diploma in Business Analytics, jointly offered by IIM Calcutta, ISI Kolkata, and IIT Kharagpur."
+>
+  <section class="relative overflow-hidden bg-gradient-to-br from-noir-900 via-noir-900 to-noir-950">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(86,142,174,0.7),_transparent_55%)]"></div>
+    <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-24">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full border border-noir-700 bg-noir-800/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+          Business · Technology · Statistics
+        </p>
+        <h1 class="mt-6 font-display text-5xl font-semibold leading-[1.08] tracking-tight text-noir-50 sm:text-6xl lg:text-7xl">
+          PGDBA<span class="text-brand-500">.</span>
+        </h1>
+        <p class="mt-5 max-w-2xl font-display text-2xl leading-snug text-noir-200 sm:text-3xl">
+          Three institutes. Three perspectives. One journey in Business Analytics.
+        </p>
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-noir-200 sm:text-lg">
+          A two-year, full-time programme jointly offered by IIM Calcutta, ISI Kolkata, and IIT Kharagpur-bringing management, statistics, and technology together.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href={withBase("/experiences/")}
+            class="rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold !text-white shadow-sm transition-colors hover:bg-brand-700"
+          >
+            Explore interview experiences
+          </a>
+          <a
+            href={withBase("/academics/")}
+            class="rounded-full border border-noir-700 bg-noir-800/60 px-6 py-3 text-sm font-semibold text-noir-50 transition-colors hover:border-brand-400 hover:text-brand-300"
+          >
+            Discover the curriculum
+          </a>
+        </div>
+        <p class="mt-5 text-sm text-noir-400">
+          An alumni-run resource for PGDBA aspirants-not an official institute website.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="absolute -inset-4 rounded-[2rem] bg-brand-600/10 blur-2xl"></div>
+        <div class="relative overflow-hidden rounded-[1.75rem] border border-noir-700 bg-noir-800/70 p-4 shadow-2xl sm:p-6">
+          <div class="flex items-center justify-between gap-3 px-2 pb-4">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-400">One programme</p>
+              <p class="mt-1 font-display text-xl font-semibold text-noir-50">A connected academic journey</p>
+            </div>
+            <span class="rounded-full border border-noir-700 px-3 py-1 text-xs text-noir-200">24 months</span>
+          </div>
+          <div class="rounded-2xl bg-white p-3 sm:p-5">
+            <img
+              src={withBase("/images/3_institute_logo.jpg")}
+              alt="The three PGDBA institutions: ISI Kolkata, IIM Calcutta, and IIT Kharagpur"
+              class="mx-auto max-h-64 w-full object-contain"
+              width="1200"
+              height="400"
+            />
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+            {[
+              { name: "ISI", focus: "Statistics" },
+              { name: "IIT Kharagpur", focus: "Technology" },
+              { name: "IIM Calcutta", focus: "Management" },
+            ].map((institute) => (
+              <div class="rounded-xl border border-noir-700 bg-noir-900/70 px-2 py-3">
+                <p class="text-xs font-semibold text-noir-50 sm:text-sm">{institute.name}</p>
+                <p class="mt-1 text-[11px] text-noir-400 sm:text-xs">{institute.focus}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Institutes banner -->
-  <section class="border-b border-noir-700 bg-noir-950">
-    <img
-      src={withBase("/images/3_institute_logo.jpg")}
-      alt="Indian Statistical Institute Kolkata, Indian Institute of Management Calcutta, and Indian Institute of Technology Kharagpur"
-      class="mx-auto max-h-64 w-full object-contain"
-    />
-  </section>
-
-  <!-- What is PGDBA -->
-  <section class="mx-auto max-w-4xl px-5 py-16">
-    <h2 class="font-display text-3xl font-semibold text-ink-900">What is PGDBA<span class="text-brand-600">.</span></h2>
-    <div class="prose prose-ink mt-4 max-w-none text-ink-700">
-      <!--
-        TODO: replace with official program copy. Placeholder drafted from public knowledge of
-        the program structure so the page isn't empty during development — must be reviewed
-        and signed off before launch.
-      -->
-      <p>
-        The Post Graduate Diploma in Business Analytics (PGDBA) is a full-time, 24-month
-        program jointly offered by three of India's premier institutes: the
-        <strong>Indian Statistical Institute (ISI), Kolkata</strong>, the
-        <strong>Indian Institute of Management (IIM) Calcutta</strong>, and the
-        <strong>Indian Institute of Technology (IIT) Kharagpur</strong>. Students spend time at
-        all three campuses, combining statistical rigor, management perspective, and
-        engineering/technology depth into a single analytics curriculum.
-      </p>
-      <p>
-        Admission is highly selective — a written test followed by a personal interview
-        conducted by faculty from all three institutes. This site exists to help aspirants
-        understand what that interview actually looks like, in the words of students who've
-        been through it.
-      </p>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="mx-auto max-w-4xl px-5 pb-16">
+  <section class="mx-auto max-w-6xl px-5 py-8 sm:py-10" aria-label="PGDBA resource statistics">
     <StatStrip
       stats={[
         { value: String(stats.batchCount), label: "Batches covered" },
         { value: `${stats.recordCount}+`, label: "Interview experiences" },
         { value: `${stats.firstYear}–present`, label: "Years archived" },
-        { value: stats.lastBatch ?? "", label: "Most recent batch" },
+        { value: stats.lastBatch ?? "", label: "Latest batch" },
       ]}
     />
   </section>
 
-  <!-- Why this site -->
-  <section class="bg-noir-950 px-5 py-16">
-    <div class="mx-auto max-w-4xl rounded-3xl bg-white p-8 shadow-sm sm:p-12">
-      <h2 class="font-display text-3xl font-semibold text-ink-900">Why this site exists<span class="text-brand-600">.</span></h2>
-      <p class="mt-4 text-ink-700">
-        This is an alumni-run, free resource for PGDBA aspirants — a rebuild of interview
-        experiences originally collected on the program's old WordPress site. Every batch from
-        2015-17 through {latest.data.batch} is archived here, organized and searchable by year,
-        so future applicants can prepare with a clear sense of what to expect.
+  <section class="mx-auto max-w-6xl px-5 py-10 sm:py-14" aria-labelledby="journey-heading">
+    <div class="mb-7">
+      <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">From campus to campus</p>
+      <h2 id="journey-heading" class="mt-2 font-display text-3xl font-semibold text-ink-900 sm:text-4xl">
+        Your PGDBA journey<span class="text-brand-600">.</span>
+      </h2>
+    </div>
+    <ol class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      {curriculum.map((module, index) => (
+        <li class="flex min-h-56 flex-col rounded-2xl border border-ink-200 bg-white p-5 shadow-sm">
+          <div class="flex items-center justify-between gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">
+              0{index + 1}
+            </span>
+            <span class="text-right text-xs font-semibold uppercase tracking-wide text-brand-700">{module.institute}</span>
+          </div>
+          <h3 class="mt-4 font-display text-lg font-semibold text-ink-900">{module.label}</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-600">{module.overview}</p>
+          <a
+            href={withBase(`/academics/#${module.id}`)}
+            class="mt-4 inline-flex whitespace-nowrap text-sm font-semibold text-brand-700 hover:text-brand-800"
+          >
+            View courses <span aria-hidden="true" class="ml-1">→</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-12 sm:py-16">
+    <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">Start exploring</p>
+        <h2 class="mt-2 font-display text-3xl font-semibold text-ink-900 sm:text-4xl">
+          Your PGDBA guide<span class="text-brand-600">.</span>
+        </h2>
+      </div>
+      <p class="max-w-xl leading-relaxed text-ink-600">
+        Whether you are learning about the programme or preparing for an interview, find the right place to start.
       </p>
-      <a href={withBase("/experiences/")} class="mt-6 inline-block font-semibold text-brand-700 hover:text-brand-800">
-        Browse all interview experiences →
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {destinations.map((destination, index) => (
+        <a
+          href={withBase(destination.href)}
+          class="group flex min-h-56 flex-col rounded-3xl border border-ink-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg sm:p-7"
+        >
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-sm font-semibold text-brand-700">
+            0{index + 1}
+          </span>
+          <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-ink-500">{destination.eyebrow}</p>
+          <h3 class="mt-1 font-display text-xl font-semibold text-ink-900">{destination.title}</h3>
+          <p class="mt-2 flex-1 leading-relaxed text-ink-600">{destination.description}</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 group-hover:text-brand-800">
+            {destination.link} <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-noir-950 px-5 py-14 sm:py-16">
+    <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-400">About the programme</p>
+        <h2 class="mt-3 font-display text-3xl font-semibold text-noir-50 sm:text-4xl">
+          Analytics, through three lenses<span class="text-brand-500">.</span>
+        </h2>
+      </div>
+      <div class="rounded-3xl border border-noir-700 bg-noir-900/70 p-6 sm:p-8">
+        <p class="leading-relaxed text-noir-200">
+          The Post Graduate Diploma in Business Analytics (PGDBA) is a full-time, 24-month programme jointly offered by the Indian Statistical Institute (ISI), Kolkata; the Indian Institute of Management (IIM) Calcutta; and the Indian Institute of Technology (IIT) Kharagpur.
+        </p>
+        <p class="mt-4 leading-relaxed text-noir-200">
+          Students learn across all three campuses, combining statistical rigour, management perspective, and technology depth. This site is an alumni-run resource that brings together interview experiences and programme information for future applicants.
+        </p>
+        <a href={withBase("/institutes/")} class="mt-6 inline-flex font-semibold text-brand-400 hover:text-brand-300">
+          Meet the three institutes <span aria-hidden="true" class="ml-2">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-14 sm:py-16">
+    <div class="flex flex-col gap-6 rounded-3xl border border-brand-200 bg-brand-50 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">Latest experiences</p>
+        <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">
+          Explore the {latest.data.batch} batch.
+        </h2>
+        <p class="mt-2 text-ink-700">
+          Read first-hand accounts from applicants who have recently been through the process.
+        </p>
+      </div>
+      <a
+        href={withBase(`/experiences/${latest.data.batch}/`)}
+        class="inline-flex shrink-0 items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold !text-white transition-colors hover:bg-brand-700"
+      >
+        Read the latest experiences <span aria-hidden="true" class="ml-2">→</span>
       </a>
     </div>
   </section>

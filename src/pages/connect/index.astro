@@ -5,10 +5,10 @@ import SocialIcon from "../../components/SocialIcon.astro";
 const socials = [
   {
     name: "LinkedIn",
-    handle: "linkedin.com/in/pgdba",
-    url: "https://www.linkedin.com/in/pgdba/",
+    handle: "linkedin.com/school/pgdba-iimcalcutta",
+    url: "https://www.linkedin.com/school/pgdba-iimcalcutta/",
     description:
-      "Placement updates, alumni achievements, and program announcements — the primary channel for anything official.",
+      "Placement updates, alumni achievements, and program announcements.",
     cta: "Follow on LinkedIn",
     icon: "linkedin",
   },
@@ -35,34 +35,35 @@ const socials = [
     handle: "ainamagazine.com",
     url: "https://ainamagazine.com/",
     description:
-      "The AI & Analytics Magazine — run by PGDBA batchmates, covering AI, data, and analytics.",
+      "The AI & Analytics Magazine - run by PGDBA batchmates, covering AI, data, and analytics.",
     cta: "Read AINA Magazine",
     icon: "magazine",
   },
 ] as const;
+
 ---
 
-<BaseLayout title="Connect" description="Follow PGDBA's official LinkedIn, Instagram, and YouTube channels, and AINA — the batch's own AI & Analytics magazine.">
+<BaseLayout title="Connect" description="Follow PGDBA's social channels, explore AINA magazine, and discover the programme's student clubs and teams.">
   <!-- Hero -->
   <section class="relative overflow-hidden bg-gradient-to-b from-noir-900 via-noir-900 to-noir-950">
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(171,55,34,0.18),_transparent_60%)]"></div>
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(86,142,174,0.65),_transparent_60%)]"></div>
     <div class="relative mx-auto max-w-3xl px-5 py-20 text-center sm:py-24">
       <h1 class="font-display text-5xl font-semibold tracking-tight text-noir-50 sm:text-6xl">
         Stay connected<span class="text-brand-500">.</span>
       </h1>
       <p class="mx-auto mt-5 max-w-xl text-balance text-lg text-noir-200">
-        This site archives interview experiences. For everything else — announcements, campus
-        life, placements, and AINA magazine — follow PGDBA's channels below.
+        This site archives interview experiences. For everything else - announcements, campus
+        life, placements, and AINA magazine - follow PGDBA's channels below.
       </p>
     </div>
   </section>
 
   <!-- Social cards -->
   <section class="bg-noir-950 px-5 py-16">
-    <div class="mx-auto flex max-w-4xl flex-col gap-6">
+    <div class="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
       {socials.map((s) => (
-        <div class="rounded-3xl bg-white p-8 shadow-sm sm:p-10">
-          <div class="flex flex-wrap items-start justify-between gap-6">
+        <div class="flex h-full flex-col rounded-3xl bg-white p-6 shadow-sm sm:p-8">
+          <div class="flex flex-1 flex-col items-start gap-5">
             <div class="flex items-start gap-4">
               <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
                 <SocialIcon name={s.icon} />
@@ -80,7 +81,7 @@ const socials = [
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex shrink-0 items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+              class="mt-5 inline-flex shrink-0 items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
             >
               {s.cta}
               <SocialIcon name={s.icon} class="h-4 w-4" />

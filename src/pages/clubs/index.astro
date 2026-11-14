@@ -1,0 +1,257 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../lib/url";
+
+const clubs = [
+  {
+    number: "01",
+    name: "Alumni Team",
+    email: "pgdba.alumnicell@iimcal.ac.in",
+    description:
+      "The PGDBA Alumni Team strengthens ties across the past, present, and future batches of PGDBA. We aim to create meaningful engagements and strengthen the bond within our community. We keep our community connected, celebrate its achievements, and build relationships that last beyond the classroom.",
+    additionalDescription:
+      "The PGDBA Alumni Team serves as the vital link between current students and alumni, fostering a strong and ever-growing network. From alumni interactions, networking initiatives, mentorship opportunities, and career guidance to knowledge-sharing sessions, we work towards bringing together generations of PGDBA graduates.\n\nWe believe in building relationships, creating opportunities, and keeping the PGDBA spirit alive forever. Being a part of PGDBA is not just about the time spent here; it is about being part of a community for life.",
+  },
+  {
+    number: "02",
+    name: "External Relations Team",
+    email: "pgdba.ercell@email.iimcal.ac.in",
+    description:
+      "The External Relations (ER) Team manages PGDBA’s official social media platforms and serves as an official communication channel between the programme, aspirants, students, alumni, and other stakeholders. The team leads marketing and outreach initiatives to strengthen the programme’s visibility, promote its unique value proposition, and make the admission and information-sharing process smoother and more accessible for prospective applicants.",
+    additionalDescription:
+      "The team also coordinates with the Alumni and AINA teams to source and publish content such as videos, articles, interviews, and student and alumni experiences. Its broader objective is to continuously improve PGDBA’s outreach, communication, and related processes by building on the experiences of previous batches, ensuring a more organised and seamless journey for upcoming batches.",
+  },
+  {
+    number: "03",
+    name: "AINA Team",
+    subtitle: "AINA – PGDBA Publishing Team",
+    email: "pgdba.aina@email.iimcal.ac.in",
+    description:
+      "The AINA Team is the publishing and knowledge-sharing wing of the PGDBA community, dedicated to exploring and communicating developments in Artificial Intelligence, Data Science, Business Analytics, and Machine Learning. Through a range of distinct initiatives, the team aims to make technical knowledge accessible, encourage intellectual exchange, and foster a culture of continuous learning.",
+    initiatives: [
+      {
+        title: "AINA Magazine and Casebook",
+        description:
+          "The magazine features student-contributed articles, research insights, industry perspectives, and emerging trends in AI and analytics. The Casebook focuses on interview preparation through structured business analytics cases, helping students strengthen their problem-solving, analytical thinking, and decision-making skills.",
+      },
+      {
+        title: "DataSense by AINA",
+        description:
+          "The team's LinkedIn-based knowledge-sharing initiative brings data science and analytical concepts to life through short, engaging, and interactive content.",
+      },
+      {
+        title: "AINA Crossword",
+        description:
+          "Interactive activities such as the AINA Crossword make technical learning engaging through puzzles and challenges.",
+      },
+    ],
+    closing:
+      "Beyond these initiatives, the team oversees content development, theme conceptualisation, article solicitation, editorial reviews, publication, and digital outreach. Together, these efforts position AINA as a platform for learning, collaboration, and meaningful engagement with the evolving world of AI and analytics.",
+  },
+  {
+    number: "04",
+    name: "Conclave Team",
+    email: "pgdba.conclave@iimcal.ac.in",
+    description:
+      "The PGDBA Conclave Team is the student-led body responsible for conceptualizing, organizing, and executing flagship events and competitions. The team aims to bridge the gap between academic learning, industry applications, and real-world business problem-solving through analytics-driven competitions, industry collaborations, and networking opportunities.",
+    events: [
+      {
+        name: "Trilytics (IIM Calcutta)",
+        description:
+          "India’s biggest data analytics competition, bringing together participants from across the country to tackle real-world business challenges through data science, strategy, and analytical problem-solving.",
+      },
+      {
+        name: "Data Tantra (IIT Kharagpur)",
+        description:
+          "An analytics-focused competition organized in association with the institute’s business fest, bringing together analytical thinking and business strategy.",
+      },
+    ],
+    responsibilities: [
+      {
+        title: "Public Relations & Marketing",
+        description:
+          "Event branding, promotional campaigns, media partnerships, outreach, and participant engagement.",
+      },
+      {
+        title: "Sponsorship & Industry Relations",
+        description:
+          "Building relationships with corporate sponsors, industry partners, and organizations to secure funding, real-world case problems, and professional collaborations.",
+      },
+      {
+        title: "Event Management",
+        description:
+          "End-to-end event planning, competition design, registrations, logistics, coordination with stakeholders, and on-ground execution.",
+      },
+    ],
+  },
+  {
+    number: "05",
+    name: "Design Team",
+    description:
+      "We are the creative heartbeat of PGDBA-the team that gives every idea a face, every event an identity, and every story a visual voice.",
+    additionalDescription:
+      "The PGDBA Design Team shapes the programme's visual identity, reflecting its spirit, culture, and achievements through creative storytelling. From club activities, student events, admissions, placements, alumni meets, and case competitions to posters, brochures, banners, reels, merchandise, and digital campaigns, we collaborate with clubs, councils, and the PGDBA office to transform ideas into compelling visual experiences.\n\nWe don't just make things look good; we make them stand out, tell stories, build identities, and create impressions that last. Behind every great event is a story, and we're the ones who bring it to life.",
+  },
+];
+---
+
+<BaseLayout
+  title="Teams"
+  description="Meet the student clubs and teams that contribute to the PGDBA community."
+>
+  <section class="relative overflow-hidden bg-gradient-to-b from-noir-900 via-noir-900 to-noir-950">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(86,142,174,0.65),_transparent_60%)]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 py-16 text-center sm:py-20">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-400">Student community</p>
+      <h1 class="mt-4 font-display text-4xl font-semibold tracking-tight text-noir-50 sm:text-5xl">
+        Teams<span class="text-brand-500">.</span>
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-noir-200">
+        PGDBA students build community and bring ideas to life through these student teams.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-5 py-12 sm:py-16">
+    <div class="grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {clubs.map((club) => (
+        <article class:list={[
+          "team-card group relative flex h-full min-h-80 flex-col overflow-hidden rounded-3xl border border-ink-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg sm:p-7",
+        ]}>
+          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-100 text-sm font-bold tracking-wide text-brand-800 transition-colors group-hover:bg-brand-200">
+            {club.number}
+          </span>
+          <h2 class="mt-5 font-display text-xl font-semibold text-ink-900">{club.subtitle ?? club.name}</h2>
+          {club.name !== "Design Team" && (
+            <p class="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-brand-700">PGDBA student team</p>
+          )}
+          {club.description && (
+            <p class="team-description-preview mt-3 leading-relaxed text-ink-700">
+              {club.description} {club.additionalDescription}
+            </p>
+          )}
+          <div class="mt-auto pt-5">
+            {club.email && (
+              <a href={`mailto:${club.email}`} class="break-all text-sm font-semibold text-brand-700 hover:text-brand-800">
+                Mail: {club.email}
+              </a>
+            )}
+            {(club.description || club.events || club.responsibilities || club.initiatives) && (
+              <>
+                <button
+                  type="button"
+                  data-open-team-details
+                  aria-haspopup="dialog"
+                  class="mt-4 flex w-full items-center justify-between border-t border-ink-100 pt-4 text-left text-sm font-semibold text-brand-700 hover:text-brand-800"
+                >
+                  Read more <span aria-hidden="true">↗</span>
+                </button>
+                <dialog
+                  data-team-dialog
+                  aria-label={`More about ${club.name}`}
+                  class="m-auto max-h-[85vh] w-[calc(100%-2rem)] max-w-3xl overflow-y-auto rounded-3xl border border-ink-200 bg-white p-0 text-left text-ink-900 shadow-2xl"
+                >
+                  <div class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-ink-100 bg-white px-5 py-4 sm:px-7">
+                    <h2 class="font-display text-xl font-semibold text-ink-900">{club.name}</h2>
+                    <form method="dialog">
+                      <button type="submit" class="rounded-full border border-ink-200 px-4 py-2 text-sm font-semibold text-ink-700 hover:bg-ink-50">
+                        Close
+                      </button>
+                    </form>
+                  </div>
+                  <div class="space-y-6 p-5 sm:p-7">
+                    {club.description && <p class="leading-relaxed text-ink-700">{club.description}</p>}
+                    {club.additionalDescription && <p class="leading-relaxed text-ink-700">{club.additionalDescription}</p>}
+                    {club.events && (
+                      <section>
+                        <h3 class="font-display text-lg font-semibold text-ink-900">Key Events</h3>
+                        <ul class="mt-3 space-y-3">
+                          {club.events.map((event) => (
+                            <li class="rounded-2xl bg-ink-50 p-4">
+                              <h4 class="font-semibold text-ink-900">{event.name}</h4>
+                              <p class="mt-1 text-sm leading-relaxed text-ink-700">{event.description}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    )}
+                    {club.responsibilities && (
+                      <section>
+                        <h3 class="font-display text-lg font-semibold text-ink-900">Key Responsibilities</h3>
+                        <p class="mt-1 text-sm text-ink-600">The team operates across three primary verticals:</p>
+                        <ol class="mt-3 grid gap-3">
+                          {club.responsibilities.map((responsibility, index) => (
+                            <li class="rounded-2xl border border-ink-100 p-4">
+                              <h4 class="font-semibold text-ink-900">{index + 1}. {responsibility.title}</h4>
+                              <p class="mt-1 text-sm leading-relaxed text-ink-700">{responsibility.description}</p>
+                            </li>
+                          ))}
+                        </ol>
+                      </section>
+                    )}
+                    {club.initiatives && (
+                      <section>
+                        <h3 class="font-display text-lg font-semibold text-ink-900">Initiatives</h3>
+                        <ul class="mt-3 grid gap-3">
+                          {club.initiatives.map((initiative) => (
+                            <li class="rounded-2xl border border-ink-100 p-4">
+                              <h4 class="font-semibold text-ink-900">{initiative.title}</h4>
+                              <p class="mt-1 text-sm leading-relaxed text-ink-700">{initiative.description}</p>
+                            </li>
+                          ))}
+                        </ul>
+                        <p class="mt-4 text-sm leading-relaxed text-ink-700">{club.closing}</p>
+                      </section>
+                    )}
+                    {club.email && (
+                      <a href={`mailto:${club.email}`} class="inline-flex font-semibold text-brand-700 hover:text-brand-800">
+                        Mail: {club.email}
+                      </a>
+                    )}
+                  </div>
+                </dialog>
+              </>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+    <div class="mt-10 rounded-3xl border border-ink-200 bg-ink-50 p-6 text-center sm:p-8">
+      <h2 class="font-display text-xl font-semibold text-ink-900">Stay connected with PGDBA</h2>
+      <p class="mt-2 text-ink-600">Find the programme's social channels, including AINA magazine.</p>
+      <a href={withBase("/connect/")} class="mt-4 inline-flex font-semibold text-brand-700 hover:text-brand-800">
+        Visit Connect <span aria-hidden="true" class="ml-2">→</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-open-team-details]").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.closest("article")?.querySelector<HTMLDialogElement>("[data-team-dialog]")?.showModal();
+    });
+  });
+</script>
+
+<style>
+  .team-card::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, #c2dfef, #4e92b3, #c2dfef);
+    content: "";
+  }
+
+  .team-description-preview {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  dialog[data-team-dialog]::backdrop {
+    background: rgb(0 0 0 / 65%);
+    backdrop-filter: blur(2px);
+  }
+</style>

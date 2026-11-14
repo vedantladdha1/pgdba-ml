@@ -9,28 +9,47 @@ const year = new Date().getFullYear();
     <div class="flex items-center gap-3">
       <img src={withBase("/images/logo.png")} alt="PGDBA logo" class="h-8 w-8" width="32" height="32" />
       <div>
-        <p class="font-display text-sm font-semibold text-noir-50">PGDBA</p>
-        <p class="text-xs text-noir-400">ISI Kolkata &middot; IIM Calcutta &middot; IIT Kharagpur</p>
+        <p class="footer-text font-display text-sm font-semibold">PGDBA</p>
+        <p class="footer-text text-xs">ISI Kolkata &middot; IIM Calcutta &middot; IIT Kharagpur</p>
       </div>
     </div>
 
-    <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-noir-200">
-      <a href={withBase("/")} class="hover:text-brand-400">About</a>
-      <a href={withBase("/experiences/")} class="hover:text-brand-400">Interview Experiences</a>
-      <a href={withBase("/connect/")} class="hover:text-brand-400">Connect</a>
-      <a href={withBase("/admin/")} class="hover:text-brand-400">Committee</a>
+    <nav class="footer-text flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+      <a href={withBase("/")} class="hover:text-brand-700">About</a>
+      <a href={withBase("/academics/")} class="hover:text-brand-700">Academics</a>
+      <a href={withBase("/institutes/")} class="hover:text-brand-700">Institutes</a>
+      <a href={withBase("/placements/")} class="hover:text-brand-700">Placements & Internships</a>
+      <a href={withBase("/eligibility/")} class="hover:text-brand-700">Eligibility</a>
+      <a href={withBase("/experiences/")} class="hover:text-brand-700">Interview experiences</a>
+      <a href={withBase("/clubs/")} class="hover:text-brand-700">Teams</a>
+      <a href={withBase("/faqs/")} class="hover:text-brand-700">FAQs</a>
+      <a href={withBase("/connect/")} class="hover:text-brand-700">Connect</a>
     </nav>
   </div>
-  <div class="border-t border-noir-700 px-5 py-4 text-center text-xs text-noir-400">
+  <div class="footer-text border-t border-noir-700 px-5 py-4 text-center text-xs">
     <p>
-      &copy; {year} PGDBA. An alumni-run resource for aspirants — not an official ISI/IIM Calcutta/IIT Kharagpur page.
+      &copy; {year} PGDBA. An alumni-run resource for aspirants - not an official ISI/IIM Calcutta/IIT Kharagpur page.
     </p>
     <p class="mt-1.5 flex items-center justify-center gap-1.5">
       Made with
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5 text-brand-500">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="footer-heart h-3.5 w-3.5">
         <path d="M12 21s-6.72-4.35-9.33-8.12C.86 10.06 1.6 6.6 4.6 5.14c2.2-1.07 4.6-.3 5.8 1.4L12 8.7l1.6-2.16c1.2-1.7 3.6-2.47 5.8-1.4 3 1.46 3.74 4.92 1.93 7.74C18.72 16.65 12 21 12 21z" />
       </svg>
-      by Batch 11
+      by Batch 12
     </p>
   </div>
 </footer>
+
+<style>
+  .footer-text {
+    color: #000;
+  }
+
+  :global(html.dark) .footer-text {
+    color: #fff;
+  }
+
+  .footer-heart {
+    color: #dc2626;
+  }
+</style>

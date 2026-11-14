@@ -1,0 +1,331 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { curriculum } from "../../data/curriculum";
+import { withBase } from "../../lib/url";
+
+const totalCourses = curriculum.reduce((count, module) => count + module.courses.length, 0);
+const totalCore = curriculum.reduce(
+  (count, module) => count + module.courses.filter((course) => course.type === "Core").length,
+  0,
+);
+---
+
+<BaseLayout
+  title="Curriculum"
+  description="Explore the PGDBA academic journey, the three participating institutes, and a semester-wise course catalogue."
+>
+  <section class="relative overflow-hidden bg-gradient-to-b from-noir-900 via-noir-900 to-noir-950">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(86,142,174,0.65),_transparent_60%)]"></div>
+    <div class="relative mx-auto max-w-4xl px-5 py-16 text-center sm:py-20">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-400">Academics · PGDBA</p>
+      <h1 class="mt-4 font-display text-4xl font-semibold tracking-tight text-noir-50 sm:text-6xl">
+        <span class="text-ink-900">Curriculum</span><span class="text-brand-500">.</span>
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-balance text-lg text-noir-200">
+        From statistical foundations to business applications, explore the academic journey that brings together data, technology and management.
+      </p>
+      <a
+        href={withBase("/institutes/")}
+        class="mt-8 inline-flex rounded-full border border-noir-700 bg-noir-800/60 px-6 py-3 text-sm font-semibold text-noir-50 transition-colors hover:border-brand-400 hover:text-brand-300"
+      >
+        Explore the three institutes
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-5xl grid-cols-2 gap-3 px-5 py-8 sm:grid-cols-4 sm:gap-4">
+    {[
+      { value: "3", label: "Participating institutes" },
+      { value: "4", label: "Academic semesters" },
+      { value: String(totalCore), label: "Listed core courses" },
+      { value: "Industry", label: "Internship project" },
+    ].map((stat) => (
+      <div class="rounded-2xl border border-ink-200 bg-white p-4 text-center shadow-sm sm:p-5">
+        <p class="font-display text-2xl font-semibold text-brand-700 sm:text-3xl">{stat.value}</p>
+        <p class="mt-1 text-sm text-ink-600">{stat.label}</p>
+      </div>
+    ))}
+  </section>
+
+  <section id="curriculum" class="mx-auto max-w-5xl scroll-mt-24 px-5 pb-16">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="font-display text-3xl font-semibold text-ink-900">Explore the semesters<span class="text-brand-600">.</span></h2>
+        <p class="mt-2 text-ink-600">
+          Select a module to see its institute and listed courses. {totalCourses} course entries, including the internship project.
+        </p>
+      </div>
+      <label class="text-sm font-medium text-ink-700">
+        Filter course type
+        <select
+          id="course-type-filter"
+          class="mt-1 block w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-ink-800 sm:w-48"
+        >
+          <option value="all">All course types</option>
+          <option value="Core">Core</option>
+          <option value="Elective">Elective</option>
+        </select>
+      </label>
+    </div>
+
+    <label class="mt-5 block text-sm font-medium text-ink-700" for="course-search">
+      Search the full catalogue
+    </label>
+    <input
+      id="course-search"
+      type="search"
+      placeholder="Search course names..."
+      class="mt-1 w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-800 shadow-sm placeholder:text-ink-400"
+    />
+
+    <section id="course-search-results" class="mt-6 hidden" aria-live="polite">
+      <div class="mb-4 flex items-center justify-between gap-4">
+        <h3 class="font-display text-xl font-semibold text-ink-900">Matching courses</h3>
+        <p id="course-search-count" class="text-sm text-ink-600"></p>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2" id="course-search-list">
+        {curriculum.flatMap((module) =>
+          module.courses.map((course) => (
+            <article
+              class="rounded-2xl border border-ink-200 bg-white p-4 shadow-sm"
+              data-global-course-result
+              data-course-name={course.name.toLowerCase()}
+              data-course-type={course.type}
+            >
+              <div class="flex items-start justify-between gap-3">
+                <h4 class="font-semibold leading-snug text-ink-900">{course.name}</h4>
+                <span class="shrink-0 text-xs font-semibold text-ink-600">{course.type}</span>
+              </div>
+              <p class="mt-2 text-sm text-ink-600">{module.label} · {module.institute}</p>
+            </article>
+          )),
+        )}
+      </div>
+      <p id="course-search-empty" class="hidden rounded-xl bg-ink-50 p-5 text-center text-sm text-ink-600">
+        No courses match your search and filter.
+      </p>
+    </section>
+
+    <div class="mt-6 overflow-x-auto">
+      <div id="semester-tabs" class="flex min-w-max gap-2 border-b border-ink-200" role="tablist" aria-label="Curriculum modules">
+        {curriculum.map((module, index) => (
+          <button
+            id={`tab-${module.id}`}
+            type="button"
+            role="tab"
+            aria-selected={index === 0 ? "true" : "false"}
+            aria-controls={module.id}
+            tabindex={index === 0 ? 0 : -1}
+            data-semester-tab={module.id}
+            class:list={[
+              "rounded-t-lg px-4 py-3 text-sm font-semibold transition-colors",
+              index === 0
+                ? "border-b-2 border-brand-600 text-brand-700"
+                : "text-ink-600 hover:bg-ink-50 hover:text-ink-900",
+            ]}
+          >
+            {module.label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    {curriculum.map((module, index) => (
+      <section
+        id={module.id}
+        role="tabpanel"
+        aria-labelledby={`tab-${module.id}`}
+        aria-label={`${module.label} course list`}
+        tabindex="0"
+        data-semester-panel={module.id}
+        class:list={[
+          "mt-6 rounded-3xl border border-ink-200 bg-white p-5 shadow-sm sm:p-8",
+          index > 0 && "hidden",
+        ]}
+        hidden={index > 0}
+      >
+        <div class="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-wider text-brand-700">{module.institute} · {module.location}</p>
+            <h3 class="mt-1 font-display text-2xl font-semibold text-ink-900">{module.label}</h3>
+            <p class="mt-2 max-w-2xl leading-relaxed text-ink-700">{module.overview}</p>
+            {module.instituteSlug && (
+              <a
+                href={withBase(`/institutes/${module.instituteSlug}/`)}
+                class="mt-3 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-800"
+              >
+                About {module.institute} <span aria-hidden="true" class="ml-1">→</span>
+              </a>
+            )}
+          </div>
+          <p class="rounded-full bg-ink-50 px-3 py-1 text-sm text-ink-700" data-course-count>
+            {module.courses.length} {module.courses.length === 1 ? "course" : "courses"}
+          </p>
+        </div>
+
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          {module.courses.map((course) => (
+            <article
+              class="rounded-2xl border border-ink-100 bg-paper p-4"
+              data-course-card
+              data-course-name={course.name.toLowerCase()}
+              data-course-type={course.type}
+            >
+              <div class="flex items-start justify-between gap-3">
+                <h4 class="font-semibold leading-snug text-ink-900">{course.name}</h4>
+                <span class="shrink-0 text-xs font-semibold text-ink-600">
+                  {course.type}
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p class="mt-5 hidden rounded-lg bg-ink-50 p-4 text-center text-sm text-ink-600" data-no-courses>
+          No courses match your search and filter.
+        </p>
+        <div class="mt-6 flex justify-between border-t border-ink-100 pt-4">
+          <button type="button" class="font-semibold text-brand-700 hover:text-brand-800" data-previous>
+            ← Previous
+          </button>
+          <span class="text-sm text-ink-500">{index + 1} / {curriculum.length}</span>
+          <button type="button" class="font-semibold text-brand-700 hover:text-brand-800" data-next>
+            Next →
+          </button>
+        </div>
+      </section>
+    ))}
+  </section>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-semester-tab]"));
+    const panels = Array.from(document.querySelectorAll<HTMLElement>("[data-semester-panel]"));
+    const searchInput = document.querySelector<HTMLInputElement>("#course-search");
+    const typeFilter = document.querySelector<HTMLSelectElement>("#course-type-filter");
+    const semesterTabs = document.querySelector<HTMLElement>("#semester-tabs");
+    const searchResults = document.querySelector<HTMLElement>("#course-search-results");
+    const searchResultCards = Array.from(document.querySelectorAll<HTMLElement>("[data-global-course-result]"));
+    const searchResultCount = document.querySelector<HTMLElement>("#course-search-count");
+    const searchResultEmpty = document.querySelector<HTMLElement>("#course-search-empty");
+
+    function selectModule(id: string) {
+      for (const tab of tabs) {
+        const selected = tab.dataset.semesterTab === id;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        tab.classList.toggle("border-b-2", selected);
+        tab.classList.toggle("border-brand-600", selected);
+        tab.classList.toggle("text-brand-700", selected);
+        tab.classList.toggle("text-ink-600", !selected);
+      }
+
+      for (const panel of panels) {
+        const selected = panel.dataset.semesterPanel === id;
+        panel.hidden = !selected;
+        panel.classList.toggle("hidden", !selected);
+      }
+    }
+
+    function filterCourses() {
+      const query = searchInput?.value.trim().toLowerCase() ?? "";
+      const selectedType = typeFilter?.value ?? "all";
+      const searching = query.length > 0 || selectedType !== "all";
+
+      if (searchResults) {
+        searchResults.hidden = !searching;
+        searchResults.classList.toggle("hidden", !searching);
+      }
+      if (semesterTabs) {
+        semesterTabs.hidden = searching;
+        semesterTabs.classList.toggle("hidden", searching);
+      }
+
+      for (const panel of panels) {
+        const selected = panel.dataset.semesterPanel === document.querySelector('[aria-selected="true"]')?.getAttribute("data-semester-tab");
+        panel.hidden = searching || !selected;
+        panel.classList.toggle("hidden", searching || !selected);
+        const cards = Array.from(panel.querySelectorAll<HTMLElement>("[data-course-card]"));
+        let visibleCount = 0;
+
+        for (const card of cards) {
+          const matchesQuery = card.dataset.courseName?.includes(query) ?? false;
+          const matchesType = selectedType === "all" || card.dataset.courseType === selectedType;
+          const visible = matchesQuery && matchesType;
+          card.hidden = !visible;
+          card.classList.toggle("hidden", !visible);
+          if (visible) visibleCount += 1;
+        }
+
+        const countLabel = panel.querySelector<HTMLElement>("[data-course-count]");
+        if (countLabel) {
+          countLabel.textContent = `${visibleCount} ${visibleCount === 1 ? "course" : "courses"}`;
+        }
+
+        const emptyMessage = panel.querySelector<HTMLElement>("[data-no-courses]");
+        if (emptyMessage) {
+          emptyMessage.hidden = visibleCount > 0;
+          emptyMessage.classList.toggle("hidden", visibleCount > 0);
+        }
+      }
+
+      let totalMatches = 0;
+      for (const card of searchResultCards) {
+        const matchesQuery = card.dataset.courseName?.includes(query) ?? false;
+        const matchesType = selectedType === "all" || card.dataset.courseType === selectedType;
+        const visible = searching && matchesQuery && matchesType;
+        card.hidden = !visible;
+        card.classList.toggle("hidden", !visible);
+        if (visible) totalMatches += 1;
+      }
+
+      if (searchResultCount) {
+        searchResultCount.textContent = `${totalMatches} ${totalMatches === 1 ? "course" : "courses"}`;
+      }
+      if (searchResultEmpty) {
+        searchResultEmpty.hidden = totalMatches > 0;
+        searchResultEmpty.classList.toggle("hidden", totalMatches > 0);
+      }
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        if (tab.dataset.semesterTab) selectModule(tab.dataset.semesterTab);
+      });
+
+      tab.addEventListener("keydown", (event) => {
+        const key = event.key;
+        if (key !== "ArrowLeft" && key !== "ArrowRight" && key !== "Home" && key !== "End") return;
+        event.preventDefault();
+
+        const nextIndex =
+          key === "Home" ? 0 :
+          key === "End" ? tabs.length - 1 :
+          (index + (key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+        const nextTab = tabs[nextIndex];
+        const nextId = nextTab?.dataset.semesterTab;
+        if (nextTab && nextId) {
+          selectModule(nextId);
+          nextTab.focus();
+        }
+      });
+    });
+
+    panels.forEach((panel, index) => {
+      panel.querySelector<HTMLButtonElement>("[data-previous]")?.addEventListener("click", () => {
+        const previous = curriculumIds[(index - 1 + curriculumIds.length) % curriculumIds.length];
+        if (previous) selectModule(previous);
+      });
+      panel.querySelector<HTMLButtonElement>("[data-next]")?.addEventListener("click", () => {
+        const next = curriculumIds[(index + 1) % curriculumIds.length];
+        if (next) selectModule(next);
+      });
+    });
+
+    const curriculumIds = panels.map((panel) => panel.dataset.semesterPanel ?? "");
+    searchInput?.addEventListener("input", filterCourses);
+    typeFilter?.addEventListener("change", filterCourses);
+
+    const hashModule = window.location.hash.slice(1);
+    if (curriculumIds.includes(hashModule)) selectModule(hashModule);
+    filterCourses();
+  </script>
+</BaseLayout>
