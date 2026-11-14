@@ -1233,10 +1233,10 @@
       "priorCoding": "Yes",
       "alternatePrograms": "No",
       "questions": {
-        "general": "- Mention what is signal ? Mention it’s characteristics too",
-        "mathStats": "- What are random variables ? State characteristics of it."
+        "general": "- Mention what is signal ? Mention it’s characteristics too\n - Differentiate between analog and digital signals.\n -Explain continuous-time and discrete-time signals.\n - What is signal processing, and what are its real-world applications?\n - Explain how your engineering background and work experience relate to business analytics.",
+        "mathStats": "- What are random variables ? State characteristics of it.\n - What is a random variable? Explain its characteristics and properties.\n - Differentiate between PMF, PDF and CDF.\n - What are Joint PDF and Joint CDF? Explain their properties and relationship.\n - What are marginal and conditional probability distributions? How are they derived from joint distributions?\n - Explain expectation, variance and covariance of random variables."
       },
-      "tips": "- Focus on mocks and try to be well-versed in statistics and maths."
+      "tips": "- Focus on mocks and try to be well-versed in statistics and maths.\n - Try to analyse mocks and don't repeat mistakes, as 1-2 questions can really cost you a seat. \n - Use pgdba.ml website to know more about interview questions and experiences of past batches. \n - Be bery clear, why you want to pursue PGDBA and be natural while explaining it."
     },
     {
       "id": "2026-28-049",
