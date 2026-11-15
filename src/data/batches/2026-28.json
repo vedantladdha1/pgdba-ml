@@ -1,7 +1,7 @@
 {
   "batch": "2026-28",
   "label": "Batch 2026-28",
-   "records": [
+  "records": [
     {
       "id": "2026-28-001",
       "batch": "2026-28",
@@ -25,7 +25,8 @@
         "gk": "- Who is president of kenya?\n- Who is foreign minister of saudi?",
         "logical": "- One pnc circular arrangement\n- One LR set"
       },
-      "tips": "- Take mocks and analyse it"
+      "tips": "- Take mocks and analyse it",
+      "linkUrl": "https://www.linkedin.com/in/akshayreddy-pulyala"
     },
     {
       "id": "2026-28-002",
@@ -79,7 +80,8 @@
         "mathStats": "- Binomial distribution\n- What is probability mass function?\n- Probability mass function of binomial distribution?\n- Graph of binomial distribution.\n- Various combinations of coin toss probability questions (both biased and unbiased coins).",
         "gk": "- Around 20 minutes of my 30 minute interview was spent discussing about if I had a water company like Bisleri then I would I sell it in Kolkata. How would I employ analytics to sell my Bisleri equivalent? Lots of cross questioning."
       },
-      "tips": "- Practice PYQs properly especially Maths.\n- Attempt as much as possible because cutoffs are high anyway. Don't be too defensive.\n- Interview is random and similar to general MBA/PGDM interviews of top B schools."
+      "tips": "- Practice PYQs properly especially Maths.\n- Attempt as much as possible because cutoffs are high anyway. Don't be too defensive.\n- Interview is random and similar to general MBA/PGDM interviews of top B schools.",
+      "linkUrl": "https://www.linkedin.com/in/shaurya-banerjee-73010119b/"
     },
     {
       "id": "2026-28-004",
@@ -105,7 +107,8 @@
         "mathStats": "- If a bag contains 3 red 3 blue then determine the probability of getting 2 red ball and other question I did not remember",
         "gk": "- Question asked tp related to my indore"
       },
-      "tips": "- Be consistent"
+      "tips": "- Be consistent",
+      "linkUrl": "https://www.linkedin.com/in/sarvesh-gour-061b151b7"
     },
     {
       "id": "2026-28-005",
@@ -131,7 +134,8 @@
         "mathStats": "- Definition of Eigen Values, Eigen Vectors, Characteristic Equation and questions on finding them\n- A question on integration to find our unknown values in a probability density function\n- Questions on Diagonalization of matrices",
         "coding": "- Questions on Cloud computing (because I had certifications on the same)"
       },
-      "tips": "- Practice your intro and why PGDBA thoroughly- Why PGDBA must be well rehearsed. DO NOT SAY 'Tri-institute course' is the only compelling factor. It might be taken in a negative way as seeing the course as a backdoor entry to the corresponding institutes. Use the strategy of\n- where you are right now in your career, where you want to be and then how PGDBA can help you fill this gap. This is what is being expected from the question. This is the single most important question in my perspective.\n- Know what opportunities are available after PGDBA\n- Practice basics of statistics and liner algebra\n- If an experienced person, be ready to answer questions on the career trajectory\n- Lead the interview in the direction of your strengths- style your answers in the analytical tone.\n- Know the difference between this course and MBA"
+      "tips": "- Practice your intro and why PGDBA thoroughly- Why PGDBA must be well rehearsed. DO NOT SAY 'Tri-institute course' is the only compelling factor. It might be taken in a negative way as seeing the course as a backdoor entry to the corresponding institutes. Use the strategy of\n- where you are right now in your career, where you want to be and then how PGDBA can help you fill this gap. This is what is being expected from the question. This is the single most important question in my perspective.\n- Know what opportunities are available after PGDBA\n- Practice basics of statistics and liner algebra\n- If an experienced person, be ready to answer questions on the career trajectory\n- Lead the interview in the direction of your strengths- style your answers in the analytical tone.\n- Know the difference between this course and MBA",
+      "linkUrl": "https://www.linkedin.com/in/kartikeya-vadlamani-403631247"
     },
     {
       "id": "2026-28-006",
@@ -182,7 +186,8 @@
         "gk": "- Asked who is the home minister of India, CM pf Tamil nadu, Qn regarding US-Iran War mediators.",
         "logical": "- Slippery pole problem"
       },
-      "tips": "- Try to give atleast 5 mocks"
+      "tips": "- Try to give atleast 5 mocks",
+      "linkUrl": "https://www.linkedin.com/in/mohammed-safeer-k"
     },
     {
       "id": "2026-28-008",
@@ -206,7 +211,8 @@
         "coding": "- Difference between usage RMSE and MAE, Linear Regression basic formulae, A company made a model to increase sales and it's best fit in the end profit is not increasing why could that be",
         "gk": "- What is the wavelength of a Radio wave , What is the range of visible spectrum, Name 5 satellites ISRO launched recently",
         "logical": "- 1 Riddle on combinations of seating"
-      }
+      },
+      "linkUrl": "https://www.linkedin.com/in/srivatsavbalabhadra/"
     },
     {
       "id": "2026-28-009",
@@ -243,7 +249,7 @@
       "ugBackground": "Engineering",
       "gradYear": "2023",
       "gradStream": "Production Engineering, B.E",
-      "workExMonths": "35 Months as of June 2026",
+      "workExMonths": "35 Months",
       "workExBackground": "Manufacturing",
       "organizations": "Tractors and Farm Equipment Limited (TAFE)",
       "mastersDegree": "No",
@@ -258,7 +264,8 @@
         "gk": "- No",
         "logical": "- A problem on choosing a college among three different institutions based on its Curriculum, Placements and Exposure. What measures one can use to choose the college."
       },
-      "tips": "- Practice, Perseverance and Faith"
+      "tips": "- Practice, Perseverance and Faith",
+      "linkUrl": "https://www.linkedin.com/in/yogesh13vs/"
     },
     {
       "id": "2026-28-011",
@@ -283,7 +290,8 @@
         "mathStats": "- Mean median mode if the data is infinite.\n- Random variable.",
         "coding": "- Different sorting algorithms, explain two of those. Time complexity.\n- Explain Convolution neural networks.( BTech project )"
       },
-      "tips": "- Stay consistent.\n- Give mocks regularly.\n- Don’t neglect interview preparation."
+      "tips": "- Stay consistent.\n- Give mocks regularly.\n- Don’t neglect interview preparation.",
+      "linkUrl": "https://www.linkedin.com/in/ajayd8"
     },
     {
       "id": "2026-28-012",
@@ -310,7 +318,8 @@
         "gk": "- Effect of trumps presidency on H1b visas",
         "logical": "- Suppose there is a 40kg weight. How can you break the 40 kg into the least number of pieces so that you can weigh all of the whole kg weights from 1 kg to 40 kg"
       },
-      "tips": "- Prepare JEE Main level math for the written test, If fresher make sure you are clear about the courses you took, Have basic engineering level understanding of linear algebra and statistics, read current affairs news"
+      "tips": "- Prepare JEE Main level math for the written test, If fresher make sure you are clear about the courses you took, Have basic engineering level understanding of linear algebra and statistics, read current affairs news",
+      "linkUrl": "https://www.linkedin.com/in/aman--shekhar/"
     },
     {
       "id": "2026-28-013",
@@ -335,7 +344,8 @@
         "coding": "- ML use in my work domain",
         "gk": "- From my native districts and state , delhi cm , and current news related to elections in 5 states happening at that time."
       },
-      "tips": "- Prepare the maths section separately, other two subjects is sufficient with what you have prepared for Cat exam"
+      "tips": "- Prepare the maths section separately, other two subjects is sufficient with what you have prepared for Cat exam",
+      "linkUrl": "https://www.linkedin.com/in/anish-vishwakarma-559014186"
     },
     {
       "id": "2026-28-014",
@@ -369,7 +379,7 @@
       "name": "Debanjan Manna",
       "ugCollege": "IIT Kanpur",
       "ugBackground": "Engineering",
-      "gradYear": "2002",
+      "gradYear": "2024",
       "gradStream": "Aerospace Engineering, Economics, BTech Double Major",
       "pgStream": "No",
       "workExMonths": "26 Months",
@@ -388,7 +398,8 @@
         "gk": "- Discussion on Iran war.",
         "logical": "- Questions on macro Economics due to my econ background.\n- Describe reverse repo rate and bank rates, GDP and monetary policy."
       },
-      "tips": "- The exam is strongly skewed for work experience folks. If you are a fresher you need to score high.\n- Fundamentally its easy.\n- Be confident even if on the face value the interview looks bad."
+      "tips": "- The exam is strongly skewed for work experience folks. If you are a fresher you need to score high.\n- Fundamentally its easy.\n- Be confident even if on the face value the interview looks bad.",
+      "linkUrl": "https://www.linkedin.com/in/debanjanmanna/"
     },
     {
       "id": "2026-28-016",
@@ -416,7 +427,8 @@
         "gk": "- Languages spoken in Uttarakhand.\n- CM of Uttarakhand.\n- Any research (space observatory) institute located in Uttarakhand?\n- Question related to Chess.",
         "logical": "- No"
       },
-      "tips": "- Revise PGDBA PYQ for written stage.\n- For interview- Have clarity about why you want to pursue PGDBA?"
+      "tips": "- Revise PGDBA PYQ for written stage.\n- For interview- Have clarity about why you want to pursue PGDBA?",
+      "linkUrl": "https://www.linkedin.com/in/ajay-joshi-b8a17b24a/"
     },
     {
       "id": "2026-28-017",
@@ -442,7 +454,8 @@
         "mathStats": "- What is the trace of an idempotent matrix? Prove it.\n- ) When does a quadratic equation converge into a linear equation?",
         "gk": "- Adjoining states and UTs of Himachal. ( I come from Himachal)\n- Drug issue in Himachal.\n- Revenue and GDP issue in Himachal"
       },
-      "tips": "- Score high in CBT to have a cushion for the interviews as they are panel dependent\n- Extensively do PYQs\n- Stay confident during interview. (Panel usually helps you to get to the answer.)\n- Avoid giving extreme opinions during the interview."
+      "tips": "- Score high in CBT to have a cushion for the interviews as they are panel dependent\n- Extensively do PYQs\n- Stay confident during interview. (Panel usually helps you to get to the answer.)\n- Avoid giving extreme opinions during the interview.",
+      "linkUrl": "https://www.linkedin.com/in/abhay-kumar-327b22400"
     },
     {
       "id": "2026-28-018",
@@ -495,7 +508,8 @@
         "mathStats": "- Newton-Raphson method\n- First principle of derivatives\n- Questions on Limits and Continuity\n- Calculus",
         "gk": "- Questions on workers’ strike in UP over stagnant wages and rising cost of living in April,"
       },
-      "tips": "- Revise undergraduate courses.\n- Prepare answers to questions on your work experience, if any.\n- Prepare basics of statistics, linear algebra, ML Concepts."
+      "tips": "- Revise undergraduate courses.\n- Prepare answers to questions on your work experience, if any.\n- Prepare basics of statistics, linear algebra, ML Concepts.",
+      "linkUrl": "https://www.linkedin.com/in/rudragera"
     },
     {
       "id": "2026-28-020",
@@ -544,7 +558,8 @@
       "questions": {
         "general": "- Why leaving BPCL\n- Motive to join PGDBA\n- Impact of AI on my contemporary company i.e. BPCL\n- Workex related question on the work I was doing\n- What is IRR, is better IRR always better or not\n- Biodiesel related discussion\n- What is NPV"
       },
-      "tips": "- Be clear in the answers and be real as well.\n- At no point, the panel should feel you are faking.\n- Try having good score at written itself"
+      "tips": "- Be clear in the answers and be real as well.\n- At no point, the panel should feel you are faking.\n- Try having good score at written itself",
+      "linkUrl": "https://www.linkedin.com/in/atharva-tayshete"
     },
     {
       "id": "2026-28-022",
@@ -569,7 +584,8 @@
         "gk": "- Rank top 5 batsman according to you",
         "logical": "- How many maximum runs can a batsman score in T20 match?\n- If 2 train are moving in opposite direction with some speed and 1 bird is moving from 1 train to another, then how much distance can bird travel"
       },
-      "tips": "- Revise all the statistics concepts that you studied till now and how statistics are applicable in your UG stream and workex.\n- Prepare your why PGDBA and why not MBA Answer very well ..."
+      "tips": "- Revise all the statistics concepts that you studied till now and how statistics are applicable in your UG stream and workex.\n- Prepare your why PGDBA and why not MBA Answer very well ...",
+      "linkUrl": "https://www.linkedin.com/in/yash-parmar-11390b192/"
     },
     {
       "id": "2026-28-023",
@@ -593,7 +609,8 @@
         "coding": "- > continuing with statistics started with linear regression to draw the graphs and equations and little discussion on it and discuss on errors.",
         "gk": "- CM of UP, uttarakhand, defence minister and discussion on Iran israel war",
         "logical": "- A basic relations question."
-      }
+      },
+      "linkUrl": "https://www.linkedin.com/in/saidathulalam"
     },
     {
       "id": "2026-28-024",
@@ -618,7 +635,8 @@
         "mathStats": "- The interviewers asked me to select a subject of my choice and then asked several questions based on that subject.",
         "gk": "- Questions related to Assembly elections in Bengal"
       },
-      "tips": "- Focus on maximizing your CBT score and thoroughly preparing one mathematics subject, as the interview may include in-depth questions on your chosen topic."
+      "tips": "- Focus on maximizing your CBT score and thoroughly preparing one mathematics subject, as the interview may include in-depth questions on your chosen topic.",
+      "linkUrl": "https://www.linkedin.com/in/pratyushprasanna1"
     },
     {
       "id": "2026-28-025",
@@ -721,7 +739,8 @@
         "gk": "- Who is PM of Sri Lanka, Bangladesh. Bangladesh elections were held recently.\n- CM of J&K, Punjab, Haryana.",
         "logical": "- Dd/mm/yyyy and mm/dd/yyyy format- how many such dates are there which are valid in both formats. Question similar to written test"
       },
-      "tips": "- For interview, prepare questions related to work experience very well. Most of the questions will be from this area.\n- For GK questions, it’s ok if you don't know answers to factual questions. They are just trying to check if you can answer such questions under pressure or not.\n- Linear regression and linear algebra can be prepared well for interview.\n- If concepts are clear then pyqs are more than enough for written test."
+      "tips": "- For interview, prepare questions related to work experience very well. Most of the questions will be from this area.\n- For GK questions, it’s ok if you don't know answers to factual questions. They are just trying to check if you can answer such questions under pressure or not.\n- Linear regression and linear algebra can be prepared well for interview.\n- If concepts are clear then pyqs are more than enough for written test.",
+      "linkUrl": "https://www.linkedin.com/in/aniket-kale3"
     },
     {
       "id": "2026-28-029",
@@ -772,7 +791,8 @@
         "mathStats": "- Difference between working of AI model and regression modeling.\n- Inventory Management Models (EOQ, etc.)\n- Functions and Differentiability using First Principle\n- What are differentiable and non-differentiable functions",
         "gk": "- How many UTs. Names of all.\n- How many have their own governments and Names of CM"
       },
-      "tips": "- Revise basics of stats and acads in detail. Practice some mocks under pressure."
+      "tips": "- Revise basics of stats and acads in detail. Practice some mocks under pressure.",
+      "linkUrl": "https://www.linkedin.com/in/vipra-bharadwaj-42814717b/"
     },
     {
       "id": "2026-28-031",
@@ -799,7 +819,8 @@
         "gk": "- No",
         "logical": "- No"
       },
-      "tips": "- Study well for 11 and 12 maths topics from NCERT books properly. And try to solve problems from cengage mathematics.\n- Prepare well for the interview topics like\n- Linear regression\n- circle\n- use of AI\n- GK"
+      "tips": "- Study well for 11 and 12 maths topics from NCERT books properly. And try to solve problems from cengage mathematics.\n- Prepare well for the interview topics like\n- Linear regression\n- circle\n- use of AI\n- GK",
+      "linkUrl": "https://www.linkedin.com/in/souparnos"
     },
     {
       "id": "2026-28-032",
@@ -826,7 +847,8 @@
         "coding": "- Why do we usually fit a straight line for somewhat linear data ? Why not use a n-1 degree polynomial for n data points ?\n- How do we find the error when we fit a line , at what error we consider a point outlier ?",
         "gk": "- Who is the highest rated chess player ? From which country ?(Chess mentioned in hobby)\n- Who is the latest Indian player titled GM?\n- What is the great nicobar project which Rahul Gandhi is opposing ?\n- Which countries are involved in South China Sea dispute? Is Taiwan a part of China? Is Singapore part of China ?\n- Which states are having election last week ( April 2026 end) , name them ?\n- How are exit poles generated ? How to do sampling for these poles ? Can we take sample from only 1 district ?\n- Which Sci-fi movie (hobby mentioned) you like the most ? (Answered \"The Dark Knight\") , why part 2 of series not part 1 (Batman Begins) ?"
       },
-      "tips": "- For written exam :\n- Solve as many problems you can as early as possible don't wait to complete whole syllabus.Try to give full mocks early to find the weak area.\n- For Interviews:\n- Even if you get low marks in written , don't lose hope , if you have cleared the cutoff , you are just as likely to be selected as the one who got highest marks.\n- Give interview mocks so that you can identify which type of question will be asked and how to handle pressure while conveying your thoughts and how to deal with counter questions.\n- If you don't know the answer , just say no, and try to answer next questions , candidate fail to pass because they spend more time on a question and few questions are not enough to judge , so try to be short and to the point so that you get asked more questions."
+      "tips": "- For written exam :\n- Solve as many problems you can as early as possible don't wait to complete whole syllabus.Try to give full mocks early to find the weak area.\n- For Interviews:\n- Even if you get low marks in written , don't lose hope , if you have cleared the cutoff , you are just as likely to be selected as the one who got highest marks.\n- Give interview mocks so that you can identify which type of question will be asked and how to handle pressure while conveying your thoughts and how to deal with counter questions.\n- If you don't know the answer , just say no, and try to answer next questions , candidate fail to pass because they spend more time on a question and few questions are not enough to judge , so try to be short and to the point so that you get asked more questions.",
+      "linkUrl": "https://www.linkedin.com/in/nishiv-singh"
     },
     {
       "id": "2026-28-033",
@@ -852,7 +874,8 @@
         "gk": "- Recent developments in Artificial Intelligence.",
         "logical": "- A simple logical reasoning puzzle."
       },
-      "tips": "- Prepare your undergraduate mathematics fundamentals thoroughly."
+      "tips": "- Prepare your undergraduate mathematics fundamentals thoroughly.",
+      "linkUrl": "https://www.linkedin.com/in/ekta-s-b956ab229"
     },
     {
       "id": "2026-28-034",
@@ -955,7 +978,8 @@
         "gk": "- US-Iran war related geopolitical questions with global impact on businesses in different sectors.",
         "logical": "- The IIM prof asked why do you think freight cost is a bottleneck for businesses."
       },
-      "tips": "- all previous year question papers\n- if possible practice 20 times\n- onlypgdba course material practice + mocks + jee videos\n- clears written exam\n- GATE DA maths (full), dbms, little bit ML & AI concepts\n- clears concept + YT channels mentioned above creates understanding of maths in Real Life.\n- unique work experience, unique engineering degree (textile, mining, printing, ceramic etc), love for maths\n- lots of things to talk about in interview\n- very good chance for conversion but knowledge will be checked definitely.\n- high score in written exam doesn't guarantee definite interview convert but just a better starting point.\n- reading English newspaper daily for Business/Economics news. (Economic Times, Financial Express, Times of India business section)\n- pgdba.ml and any interview by PGDBA alumni available on the internet - GOLDMINE."
+      "tips": "- all previous year question papers\n- if possible practice 20 times\n- onlypgdba course material practice + mocks + jee videos\n- clears written exam\n- GATE DA maths (full), dbms, little bit ML & AI concepts\n- clears concept + YT channels mentioned above creates understanding of maths in Real Life.\n- unique work experience, unique engineering degree (textile, mining, printing, ceramic etc), love for maths\n- lots of things to talk about in interview\n- very good chance for conversion but knowledge will be checked definitely.\n- high score in written exam doesn't guarantee definite interview convert but just a better starting point.\n- reading English newspaper daily for Business/Economics news. (Economic Times, Financial Express, Times of India business section)\n- pgdba.ml and any interview by PGDBA alumni available on the internet - GOLDMINE.",
+      "linkUrl": "https://www.linkedin.com/in/evan-sur-1a10b2180"
     },
     {
       "id": "2026-28-038",
@@ -980,7 +1004,8 @@
         "gk": "- Delimitation, Indian ambassador to Bangladesh",
         "logical": "- Based on my mechanical background from fluid dynamics and related it to organization, 2 to 3 questions."
       },
-      "tips": "- Learning basic meaning behind things. Prepare education background questions also. Keep up with GK."
+      "tips": "- Learning basic meaning behind things. Prepare education background questions also. Keep up with GK.",
+      "linkUrl": "https://www.linkedin.com/in/roopak-p-c"
     },
     {
       "id": "2026-28-039",
@@ -1006,7 +1031,8 @@
         "mathStats": "- What is convergence?\n- Optimization problem: Interviewer asked me that suppose you have to optimize Z=dx+ey and the constraint is ax+by=c. Then how will you find the maxima or minima of Z (asked me to draw it graphically on the blackboard with chalk and solve via LPP)\n- What is continuity? Tell me a function discontinuous at x=5",
         "gk": "- When was the last time Delimitation happened? Why is opposition opposed to it?\n- Is Maharashtra's rule on Auto drivers being versed in Marathi good or bad? (asked me to give both pros and cons)"
       },
-      "tips": "- If the interview nudges you to rethink after you give an answer, take a step back and rethink once again (it's possible they are just pressure testing you and checking your confidence, but there might also be a chance you made an error, and they are giving you an opportunity to fix it)\n- Don't give lesser importance to Current Affairs: During my interview, the panel did not even ask for my introduction or anything, they asked my name and straightaway jumped into current affair questions. Had I not prepared them, the rest of the interview tone could have gone on a slightly negative tone\n- Be confident and calm during the interview. Even if you are unable to answer 1 or 2 questions, that's completely fine, but don't start to panic and mess up the rest of the interview\n- Give lots of mock tests to optimize your test-taking strategy and give at least 4-5 mock interviews too"
+      "tips": "- If the interview nudges you to rethink after you give an answer, take a step back and rethink once again (it's possible they are just pressure testing you and checking your confidence, but there might also be a chance you made an error, and they are giving you an opportunity to fix it)\n- Don't give lesser importance to Current Affairs: During my interview, the panel did not even ask for my introduction or anything, they asked my name and straightaway jumped into current affair questions. Had I not prepared them, the rest of the interview tone could have gone on a slightly negative tone\n- Be confident and calm during the interview. Even if you are unable to answer 1 or 2 questions, that's completely fine, but don't start to panic and mess up the rest of the interview\n- Give lots of mock tests to optimize your test-taking strategy and give at least 4-5 mock interviews too",
+      "linkUrl": "https://www.linkedin.com/in/varun-gupta-46b907122"
     },
     {
       "id": "2026-28-040",
@@ -1031,7 +1057,8 @@
         "mathStats": "- Basic Question in Stats and Probability.(bayes theorem) and qustions in rank of matrix.",
         "gk": "- Questions in ongoing wars."
       },
-      "tips": "- Revise your basics in maths, stats, programming and current business affairs, and be ready to explain every point in your resume confidently. Focus on why you want PGDBA and show your analytical thinking rather then just giving the correct answer"
+      "tips": "- Revise your basics in maths, stats, programming and current business affairs, and be ready to explain every point in your resume confidently. Focus on why you want PGDBA and show your analytical thinking rather then just giving the correct answer",
+      "linkUrl": "https://www.linkedin.com/in/vasanth-mathiyalagan"
     },
     {
       "id": "2026-28-041",
@@ -1105,13 +1132,13 @@
       "priorCoding": "Yes",
       "alternatePrograms": "MSQMBA - ISI Bangalore, M.Tech AI & DS - IIIT Bangalore",
       "questions": {
-        "general": "- INTERVIEW EXPERIENCE\n- Name: Dipmalya Chakraborty\n- Date of Interview: 02/05/2026, Venue: ISI Kolkata, Panel: 5\n- Duration of Interview: 15-20 min\n- Panelist 1:\n- Q1. Introduce yourself.\n- Q2. What insights have you generated at your work?\n- Q3. Why PGDBA? What is the need for learning Analytics when this can be handled by AI?\n- Q4. There is a buzz around Quantum Computing. Do you know anything about it?\n- Q5. The airport at Amsterdam is well below mean sea level, what is the civil engineering behind it?\n- Q6. How were high rises being built over marshy soils of Europe?\n- Q7. What is a cantilever? Have you seen it anywhere in real life?\n- Panelist 2:\n- Q1. Time taken to compute the median of an array of numbers. Why O(nLog(n))?\n- Q2. Let’s say we have 2 sorted arrays, how will you find the median? What is the time complexity?\n- Q3. Can you optimise your approach? Solve it on the board. What is the best case time complexity possible?\n- Panelist 3:\n- Q1. Let’s play a game. Draw 11 sticks on the board. Let's say we have 11 sticks and two players A and B\n- one can pick up 1,2 or 3 sticks at a time, sequentially from left to right. The player who picks up the last stick loses the game. Create a strategy for winning the game.\n- Q2. Does it entirely depend on whoever starts the game first?\n- Q3. Find the recurrence equation of the strategy.",
-        "mathStats": "- INTERVIEW EXPERIENCE\n- Name: Dipmalya Chakraborty\n- Date of Interview: 02/05/2026, Venue: ISI Kolkata, Panel: 5\n- Duration of Interview: 15-20 min\n- Panelist 1:\n- Q1. Introduce yourself.\n- Q2. What insights have you generated at your work?\n- Q3. Why PGDBA? What is the need for learning Analytics when this can be handled by AI?\n- Q4. There is a buzz around Quantum Computing. Do you know anything about it?\n- Q5. The airport at Amsterdam is well below mean sea level, what is the civil engineering behind it?\n- Q6. How were high rises being built over marshy soils of Europe?\n- Q7. What is a cantilever? Have you seen it anywhere in real life?\n- Panelist 2:\n- Q1. Time taken to compute the median of an array of numbers. Why O(nLog(n))?\n- Q2. Let’s say we have 2 sorted arrays, how will you find the median? What is the time complexity?\n- Q3. Can you optimise your approach? Solve it on the board. What is the best case time complexity possible?\n- Panelist 3:\n- Q1. Let’s play a game. Draw 11 sticks on the board. Let's say we have 11 sticks and two players A and B\n- one can pick up 1,2 or 3 sticks at a time, sequentially from left to right. The player who picks up the last stick loses the game. Create a strategy for winning the game.\n- Q2. Does it entirely depend on whoever starts the game first?\n- Q3. Find the recurrence equation of the strategy.",
-        "coding": "- INTERVIEW EXPERIENCE\n- Name: Dipmalya Chakraborty\n- Date of Interview: 02/05/2026, Venue: ISI Kolkata, Panel: 5\n- Duration of Interview: 15-20 min\n- Panelist 1:\n- Q1. Introduce yourself.\n- Q2. What insights have you generated at your work?\n- Q3. Why PGDBA? What is the need for learning Analytics when this can be handled by AI?\n- Q4. There is a buzz around Quantum Computing. Do you know anything about it?\n- Q5. The airport at Amsterdam is well below mean sea level, what is the civil engineering behind it?\n- Q6. How were high rises being built over marshy soils of Europe?\n- Q7. What is a cantilever? Have you seen it anywhere in real life?\n- Panelist 2:\n- Q1. Time taken to compute the median of an array of numbers. Why O(nLog(n))?\n- Q2. Let’s say we have 2 sorted arrays, how will you find the median? What is the time complexity?\n- Q3. Can you optimise your approach? Solve it on the board. What is the best case time complexity possible?\n- Panelist 3:\n- Q1. Let’s play a game. Draw 11 sticks on the board. Let's say we have 11 sticks and two players A and B\n- one can pick up 1,2 or 3 sticks at a time, sequentially from left to right. The player who picks up the last stick loses the game. Create a strategy for winning the game.\n- Q2. Does it entirely depend on whoever starts the game first?\n- Q3. Find the recurrence equation of the strategy.",
-        "gk": "- INTERVIEW EXPERIENCE\n- Name: Dipmalya Chakraborty\n- Date of Interview: 02/05/2026, Venue: ISI Kolkata, Panel: 5\n- Duration of Interview: 15-20 min\n- Panelist 1:\n- Q1. Introduce yourself.\n- Q2. What insights have you generated at your work?\n- Q3. Why PGDBA? What is the need for learning Analytics when this can be handled by AI?\n- Q4. There is a buzz around Quantum Computing. Do you know anything about it?\n- Q5. The airport at Amsterdam is well below mean sea level, what is the civil engineering behind it?\n- Q6. How were high rises being built over marshy soils of Europe?\n- Q7. What is a cantilever? Have you seen it anywhere in real life?\n- Panelist 2:\n- Q1. Time taken to compute the median of an array of numbers. Why O(nLog(n))?\n- Q2. Let’s say we have 2 sorted arrays, how will you find the median? What is the time complexity?\n- Q3. Can you optimise your approach? Solve it on the board. What is the best case time complexity possible?\n- Panelist 3:\n- Q1. Let’s play a game. Draw 11 sticks on the board. Let's say we have 11 sticks and two players A and B\n- one can pick up 1,2 or 3 sticks at a time, sequentially from left to right. The player who picks up the last stick loses the game. Create a strategy for winning the game.\n- Q2. Does it entirely depend on whoever starts the game first?\n- Q3. Find the recurrence equation of the strategy.",
-        "logical": "- INTERVIEW EXPERIENCE\n- Name: Dipmalya Chakraborty\n- Date of Interview: 02/05/2026, Venue: ISI Kolkata, Panel: 5\n- Duration of Interview: 15-20 min\n- Panelist 1:\n- Q1. Introduce yourself.\n- Q2. What insights have you generated at your work?\n- Q3. Why PGDBA? What is the need for learning Analytics when this can be handled by AI?\n- Q4. There is a buzz around Quantum Computing. Do you know anything about it?\n- Q5. The airport at Amsterdam is well below mean sea level, what is the civil engineering behind it?\n- Q6. How were high rises being built over marshy soils of Europe?\n- Q7. What is a cantilever? Have you seen it anywhere in real life?\n- Panelist 2:\n- Q1. Time taken to compute the median of an array of numbers. Why O(nLog(n))?\n- Q2. Let’s say we have 2 sorted arrays, how will you find the median? What is the time complexity?\n- Q3. Can you optimise your approach? Solve it on the board. What is the best case time complexity possible?\n- Panelist 3:\n- Q1. Let’s play a game. Draw 11 sticks on the board. Let's say we have 11 sticks and two players A and B\n- one can pick up 1,2 or 3 sticks at a time, sequentially from left to right. The player who picks up the last stick loses the game. Create a strategy for winning the game.\n- Q2. Does it entirely depend on whoever starts the game first?\n- Q3. Find the recurrence equation of the strategy."
+        "general": "- Introduce yourself.\n- What insights have you generated at your work?\n- Why PGDBA? What is the need for learning analytics when this can be handled by AI?\n- The airport at Amsterdam is well below mean sea level. What civil engineering makes this possible?\n- How are high-rises built over marshy soils?\n- What is a cantilever? Have you seen one in real life?",
+        "mathStats": "- What is the time complexity of computing the median of an array? Why O(n log n)?\n- Given two sorted arrays, how would you find the median? What is the time complexity?\n- Can you optimise your approach? Solve it on the board. What is the best-case time complexity?",
+        "gk": "- There is a buzz around quantum computing. Do you know anything about it?",
+        "logical": "- With 11 sticks, two players take 1, 2, or 3 sticks in turn; the player who takes the last stick loses. Develop a winning strategy.\n- Does the strategy depend entirely on who starts?\n- Find the recurrence equation for the strategy."
       },
-      "tips": "- Having gone through the PGDBA selection process this year, I thought I'd share a few suggestions for future aspirants. These are based entirely on what worked for me.\n- For the Written Test:\n- Start with Previous Year Questions (PYQs)-they give the best idea of the exam pattern and difficulty.\n- Practice easy to medium JEE Mathematics questions to strengthen your fundamentals.\n- If time permits, refer to TOMATO for additional practice.\n- For the Interview:\n- Be confident and be yourself. The interview is as much about your thought process as it is about your knowledge.\n- Know your profile thoroughly-your birthplace, educational background, workplace, projects, hobbies, and stay updated with current affairs.\n- \"Why PGDBA?\" is probably the most important question. Your answer should clearly explain your motivation and career goals, as it often sets the direction for the rest of the interview.\n- Be able to tell your work experience as a concise story. Explain what you do, the business problems you solve, and how analytics fits into your work.\n- Build a balanced understanding of Probability & Statistics, Calculus, Linear Algebra, and Machine Learning. If you have relevant experience, revise DSA as well.\n- Finally, don't underestimate the importance of a good night's sleep before the interview. A fresh mind helps you think clearly and communicate confidently.\n- Most importantly, don't try to know everything. Focus on understanding the fundamentals, think logically, and communicate your ideas clearly.\n- Wishing the very best to everyone preparing for PGDBA!"
+      "tips": "- Having gone through the PGDBA selection process this year, I thought I'd share a few suggestions for future aspirants. These are based entirely on what worked for me.\n- For the Written Test:\n- Start with Previous Year Questions (PYQs)-they give the best idea of the exam pattern and difficulty.\n- Practice easy to medium JEE Mathematics questions to strengthen your fundamentals.\n- If time permits, refer to TOMATO for additional practice.\n- For the Interview:\n- Be confident and be yourself. The interview is as much about your thought process as it is about your knowledge.\n- Know your profile thoroughly-your birthplace, educational background, workplace, projects, hobbies, and stay updated with current affairs.\n- \"Why PGDBA?\" is probably the most important question. Your answer should clearly explain your motivation and career goals, as it often sets the direction for the rest of the interview.\n- Be able to tell your work experience as a concise story. Explain what you do, the business problems you solve, and how analytics fits into your work.\n- Build a balanced understanding of Probability & Statistics, Calculus, Linear Algebra, and Machine Learning. If you have relevant experience, revise DSA as well.\n- Finally, don't underestimate the importance of a good night's sleep before the interview. A fresh mind helps you think clearly and communicate confidently.\n- Most importantly, don't try to know everything. Focus on understanding the fundamentals, think logically, and communicate your ideas clearly.\n- Wishing the very best to everyone preparing for PGDBA!",
+      "linkUrl": "https://www.linkedin.com/in/dipmalya-chakraborty-0534b41b6"
     },
     {
       "id": "2026-28-044",
@@ -1137,7 +1164,8 @@
         "coding": "- I mentioned that I have worked on image processing during my work in my previous company, so some basics of CNN like what is it and why CNN over normal DL for images?\n- Not about ML/ Coding, one interviewer asked about the cryptocurrency and Blockchain. Underlying principles such as P2P network, ledger, Hash function.",
         "gk": "- Asked about the ongoing assembly elections. In which states and UT elections are being held right now. From there he pivoted to the random variables and how would you model election results using probability?"
       },
-      "tips": "- Try to maximise the score in CBT, the interview process is quite random and depends on the panel. Read the current affairs a bit."
+      "tips": "- Try to maximise the score in CBT, the interview process is quite random and depends on the panel. Read the current affairs a bit.",
+      "linkUrl": "https://www.linkedin.com/in/tamanna-rami/"
     },
     {
       "id": "2026-28-045",
@@ -1164,7 +1192,8 @@
         "coding": "- I had mentioned in my introduction that I had developed an ML based tool for my college major project. So they asked a few questions on that: Elastic Net Regression, L1 and L2 regularization, Alpha parameter",
         "gk": "- A brief discussion on the US-Iran war."
       },
-      "tips": "- Believe in yourself."
+      "tips": "- Believe in yourself.",
+      "linkUrl": "https://www.linkedin.com/in/harshprabhakar"
     },
     {
       "id": "2026-28-046",
@@ -1187,7 +1216,8 @@
         "general": "- ) Do you have work experience? If yes, where and for how many months?\n- ) Domain\n- ) Have you handled any challenging situation at work? If yes, please share.\n- ) In Banking (since I was from BFSI sector), there are many types of risks associated, so which type of risk does the situation you mentioned fall under?\n- ) What measures are companies taking nowadays to ensure data availability even when servers crash?",
         "mathStats": "- ) What is meant by onto mapping? Explain with an example.\n- ) What is bijective mapping?\n- ) Let A={1,2,3,4,5} and B={a,b,c,d}. How many functions are possible from A to B? How many bijective mappings are possible?\n- ) Let A={1,2,3…26} and B={a,b,c…z}. Find out the probability of mapping all multiples of 5 in set A with all vowels in set B using bijective mapping."
       },
-      "tips": "- Please study basic mathematics, they are the most important for the interview, according to my view, especially prepare Linear Algebra, Functions and Probability well."
+      "tips": "- Please study basic mathematics, they are the most important for the interview, according to my view, especially prepare Linear Algebra, Functions and Probability well.",
+      "linkUrl": "https://www.linkedin.com/in/agnik-das-835315227"
     },
     {
       "id": "2026-28-047",
@@ -1212,7 +1242,8 @@
         "mathStats": "- All the q that were asked were math basedas i had atempted GATE DA that year.\n- Bengaluru slot 2 mech 2 yr exp\n- Tmay\n- Panel 1: I asked onlyv tmay\n- a2+1=0. Tell if there exists a real matrix A for which A^2 +1 =0.\n- I said it exists\n- They asked to prove\n- I told complex eigenvalue will rotate . Hence will exist.\n- I gave 2 by 2 example and he asked me proof . I told tge same again. He was not conhinced and moved on.\n- Panel 2: Suppose u conver t X, Y and Z. There are three parameters A, B and C on which you will compare. How will you quantify them to compare and select the best for you.\n- Gave a approach. He told its a valid approach but there is a better approach but its ok and he moved on.\n- Panel 3:\n- No. of accidents on road on a day is following which distribution. Why and why not?\n- 1 die and 1 coin is tossed.\n- Given one head. What is the probability of even numbers?\n- Give an example of monotonically increasing function. Gave f(x) = x. He asked if i exactly knew the term def if not then leave it. I said no and moved on.\n- Given f(x) = x2\n- R to R.\n- Is this bijective function.\n- Is it onto.\n- Is it one to one.",
         "logical": "- All the q that were asked were math basedas i had atempted GATE DA that year.\n- Bengaluru slot 2 mech 2 yr exp\n- Tmay\n- Panel 1: I asked onlyv tmay\n- a2+1=0. Tell if there exists a real matrix A for which A^2 +1 =0.\n- I said it exists\n- They asked to prove\n- I told complex eigenvalue will rotate . Hence will exist.\n- I gave 2 by 2 example and he asked me proof . I told tge same again. He was not conhinced and moved on.\n- Panel 2: Suppose u conver t X, Y and Z. There are three parameters A, B and C on which you will compare. How will you quantify them to compare and select the best for you.\n- Gave a approach. He told its a valid approach but there is a better approach but its ok and he moved on.\n- Panel 3:\n- No. of accidents on road on a day is following which distribution. Why and why not?\n- 1 die and 1 coin is tossed.\n- Given one head. What is the probability of even numbers?\n- Give an example of monotonically increasing function. Gave f(x) = x. He asked if i exactly knew the term def if not then leave it. I said no and moved on.\n- Given f(x) = x2\n- R to R.\n- Is this bijective function.\n- Is it onto.\n- Is it one to one."
       },
-      "tips": "- Trust the process and dont worry about competition"
+      "tips": "- Trust the process and dont worry about competition",
+      "linkUrl": "https://www.linkedin.com/in/l-srinivasan-63a1bb194/"
     },
     {
       "id": "2026-28-048",
@@ -1236,7 +1267,8 @@
         "general": "- Mention what is signal ? Mention it’s characteristics too\n - Differentiate between analog and digital signals.\n -Explain continuous-time and discrete-time signals.\n - What is signal processing, and what are its real-world applications?\n - Explain how your engineering background and work experience relate to business analytics.",
         "mathStats": "- What are random variables ? State characteristics of it.\n - What is a random variable? Explain its characteristics and properties.\n - Differentiate between PMF, PDF and CDF.\n - What are Joint PDF and Joint CDF? Explain their properties and relationship.\n - What are marginal and conditional probability distributions? How are they derived from joint distributions?\n - Explain expectation, variance and covariance of random variables."
       },
-      "tips": "- Focus on mocks and try to be well-versed in statistics and maths.\n - Try to analyse mocks and don't repeat mistakes, as 1-2 questions can really cost you a seat. \n - Use pgdba.ml website to know more about interview questions and experiences of past batches. \n - Be very clear, why you want to pursue PGDBA and be natural while explaining it."
+      "tips": "- Focus on mocks and try to be well-versed in statistics and maths.\n - Try to analyse mocks and don't repeat mistakes, as 1-2 questions can really cost you a seat. \n - Use pgdba.ml website to know more about interview questions and experiences of past batches. \n - Be very clear, why you want to pursue PGDBA and be natural while explaining it.",
+      "linkUrl": "https://www.linkedin.com/in/vedantladdha"
     },
     {
       "id": "2026-28-049",
@@ -1258,7 +1290,8 @@
         "general": "- why business analytics would suit my profile than general MBA",
         "mathStats": "- Integral of a Exponential Function"
       },
-      "tips": "- Don't stress"
+      "tips": "- Don't stress",
+      "linkUrl": "https://www.linkedin.com/in/sowparnikaa-g-v-071897434"
     },
     {
       "id": "2026-28-050",
@@ -1312,7 +1345,8 @@
         "mathStats": "- Linear algebra, trading model",
         "logical": "- Matrices intuitions"
       },
-      "tips": "- Focus upon understanding of concepts and why of the things(why something happens) along with good practice to avoid silly mistakes\n- For interview process, master your profile(you are genuinely good at) along with mastering some math's topics(LA stats probability). The flow should be natural than that of prepared."
+      "tips": "- Focus upon understanding of concepts and why of the things(why something happens) along with good practice to avoid silly mistakes\n- For interview process, master your profile(you are genuinely good at) along with mastering some math's topics(LA stats probability). The flow should be natural than that of prepared.",
+      "linkUrl": "https://www.linkedin.com/in/maheshgawande225"
     },
     {
       "id": "2026-28-052",
@@ -1323,7 +1357,7 @@
       "ugBackground": "Engineering",
       "gradYear": "2023",
       "gradStream": "Information Technology, B. Tech",
-      "workExMonths": "Fresher",
+      "workExMonths": "Work experience",
       "workExBackground": "IT/ITES",
       "organizations": "Freelance, Monkhub Innovations Pvt Ltd",
       "writtenScore": 110,
@@ -1335,7 +1369,8 @@
         "coding": "- Decision boundary, activation functions, neural networks",
         "gk": "- War between USA and Iran"
       },
-      "tips": "- Focus on fundamentals only and don't panic"
+      "tips": "- Focus on fundamentals only and don't panic",
+      "linkUrl": "https://www.linkedin.com/in/saksham-iimc"
     },
     {
       "id": "2026-28-053",
@@ -1389,7 +1424,8 @@
         "coding": "- Regression and Time Series, Image Processing, Temporal Autocorrelation",
         "logical": "- Length of coastline of UK"
       },
-      "tips": "- Score high in written, Interview can go sideways. My interview was terrible (atleast from my pov), idk how I got the call. Do PYPs in a timed fashion and aim for a 130+ score, time advantage will be there in exams if your fundamentals are strong\n- For interview revise all of your undergrad properly, if you have relevant work experience the interview might revolve around that and you have scope to shape it towards where you want it to go. If not then the same old suggestion that everyone will give about Linear Algebra, Probability and Statistics.\n- Don't Shy away from saying \"No/I don't know\" to questions. That is what I had said during my interview so many times. Better not fake the answers, they'll show you your place.\n- I spent half my interview prep time just studying for the \"Why PGDBA\" question given my profile but they didn't probe"
+      "tips": "- Score high in written, Interview can go sideways. My interview was terrible (atleast from my pov), idk how I got the call. Do PYPs in a timed fashion and aim for a 130+ score, time advantage will be there in exams if your fundamentals are strong\n- For interview revise all of your undergrad properly, if you have relevant work experience the interview might revolve around that and you have scope to shape it towards where you want it to go. If not then the same old suggestion that everyone will give about Linear Algebra, Probability and Statistics.\n- Don't Shy away from saying \"No/I don't know\" to questions. That is what I had said during my interview so many times. Better not fake the answers, they'll show you your place.\n- I spent half my interview prep time just studying for the \"Why PGDBA\" question given my profile but they didn't probe",
+      "linkUrl": "https://www.linkedin.com/in/nishadkhade"
     },
     {
       "id": "2026-28-055",
@@ -1436,7 +1472,8 @@
         "mathStats": "- Normal Distribution properties\n- Rank of matrix\n- Cayley-Hamilton theorem related to eigen value/characteristic equation\n- Basic binomial theorem question (related to sum of binomial coefficients)",
         "coding": "- ML metrics like accuracy vs precision vs recall (definitions and comparison)\n- Meaning of True Positives (TPs, FPs, etc)\n- Use case/importance of each metric in different fields."
       },
-      "tips": "- Written exam\n- Go through JEE formulae thoroughly. That should be enough as other sections r relatively easier and don't need much preparation if one is already preparing for CAT!\n- Interview\n- Maths/Stats topics which r a must and foundational concepts in these should be absolutely clear r\n- Mean, median, mode, variance, std deviation\n- Normal & Poisson (frequency) distribution properties\n- Matrices\n- from basics up till rank & eigen values/vectors\n- Combinatorics\n- PnC, Binomial theorem & Probability (conditional)\n- Current affairs & business news/understanding is a must even though I wasn't asked about it in interview!"
+      "tips": "- Written exam\n- Go through JEE formulae thoroughly. That should be enough as other sections r relatively easier and don't need much preparation if one is already preparing for CAT!\n- Interview\n- Maths/Stats topics which r a must and foundational concepts in these should be absolutely clear r\n- Mean, median, mode, variance, std deviation\n- Normal & Poisson (frequency) distribution properties\n- Matrices\n- from basics up till rank & eigen values/vectors\n- Combinatorics\n- PnC, Binomial theorem & Probability (conditional)\n- Current affairs & business news/understanding is a must even though I wasn't asked about it in interview!",
+      "linkUrl": "https://www.linkedin.com/in/raghav-rath-64b338243/"
     },
     {
       "id": "2026-28-057",
@@ -1460,7 +1497,8 @@
         "general": "- On Paris agreement and questions around it. Because I had it in my intro.",
         "gk": "- My interview was revolved a lot around this because I had UPSC background. But it was more of a discussion on current events and issues and theories around it.\n- Parliament bill of Nari shakti,\n- How I chose my optional,\n- what essay did I write in my mains and questions over it.\n- If given a chane to choose, what would I choose to be a Politician or a Bureaucrat? Etc"
       },
-      "tips": "- Just do it..You'll never know the outcome before its time. Preparing for Interview can be a bit stressful but do everything you can to give your best shot."
+      "tips": "- Just do it..You'll never know the outcome before its time. Preparing for Interview can be a bit stressful but do everything you can to give your best shot.",
+      "linkUrl": "https://www.linkedin.com/in/apurva-v-rajput"
     },
     {
       "id": "2026-28-058",
@@ -1489,7 +1527,8 @@
         "coding": "- How would you estimate the coefficients of a linear regression model?",
         "gk": "- India's per capita GDP ranking is very low. What should we do so that it improves in the next 5 years?\n- Who was the first grand master from India? Who was the first to receive gm norm?.(had mentioned chess as a hobby)",
         "logical": "- Given a long sequence containing only the words \"is\", \"it\", and \"not\", I was asked to add punctuation to make it meaningful."
-      }
+      },
+      "linkUrl": "https://www.linkedin.com/in/namit-abhishek"
     },
     {
       "id": "2026-28-059",
@@ -1543,7 +1582,8 @@
         "gk": "- Reasons for shifting capital from Kolkata to delhi during the British raj\n- Detailed questions on 5 year plans\n- Some geomorphology questions on plate tectonics\n- Questioned on IIM Act and it's amendment and repurcussions",
         "logical": "- Was asked current affair and other gk questions as I had given upsc"
       },
-      "tips": "- Focus more on mathematics and probability theory\n- Be well prepared with your resume and it's allied areas.\n- Be quantitiave and don't talk in loose terms as you will be expected to be objective and precise"
+      "tips": "- Focus more on mathematics and probability theory\n- Be well prepared with your resume and it's allied areas.\n- Be quantitiave and don't talk in loose terms as you will be expected to be objective and precise",
+      "linkUrl": "https://www.linkedin.com/in/aanand-daga"
     }
   ]
 }
