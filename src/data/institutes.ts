@@ -10,6 +10,8 @@ export const institutes = [
     contribution:
       "The programme's statistical and machine-learning foundations are represented in the curriculum module hosted at ISI Kolkata.",
     website: "https://www.isical.ac.in/",
+    programmeEmail: "pgdbaisi@isical.ac.in",
+    programmeWebsite: "",
   },
   {
     slug: "iit-kharagpur",
@@ -22,6 +24,8 @@ export const institutes = [
     contribution:
       "The programme's technology and computational methods are represented in the curriculum module hosted at IIT Kharagpur.",
     website: "https://www.iitkgp.ac.in/",
+    programmeEmail: "pgdba@vgsom.iitkgp.ac.in",
+    programmeWebsite: "https://pgdba.iitkgp.ac.in/",
   },
   {
     slug: "iim-calcutta",
@@ -34,5 +38,7 @@ export const institutes = [
     contribution:
       "The programme's management and business applications are represented in the pre-semester and Semester III curriculum modules at IIM Calcutta.",
     website: "https://www.iimcal.ac.in/",
+    programmeEmail: "pgdba@iimcal.ac.in",
+    programmeWebsite: "https://www.iimcal.ac.in/programs/PGDBA",
   },
 ] as const;

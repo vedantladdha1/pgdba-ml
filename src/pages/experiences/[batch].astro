@@ -17,6 +17,19 @@ const { batches, current } = Astro.props;
 const { label, publishedNote, records } = current.data;
 const isNarrative = records.length > 0 && records.every((r) => r.sourceFormat === "narrative");
 const initialVisibleExperiences = 6;
+const hasInterviewQuestions = (record: (typeof records)[number]) =>
+  Object.values(record.questions).some((value) => value?.trim() && !/^(?:none|no|-)$/i.test(value.trim()));
+const completeRecords = records.filter(
+  (record) =>
+    record.writtenScore !== undefined &&
+    record.preInterviewScore !== undefined &&
+    hasInterviewQuestions(record),
+);
+const featuredRecords = current.data.batch === "2026-28" ? completeRecords.slice(0, 6) : [];
+const displayRecords =
+  featuredRecords.length > 0
+    ? [...featuredRecords, ...records.filter((record) => !featuredRecords.includes(record))]
+    : records;
 
 const numericAvg = (values: number[]) =>
   values.length ? (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1) : undefined;
@@ -25,6 +38,32 @@ const writtenScores = records
   .map((r) => r.writtenScore)
   .filter((v): v is number => typeof v === "number");
 const avgWritten = numericAvg(writtenScores);
+const reportedColleges = records.filter((record) => record.ugCollege?.trim());
+const percentage = (count: number, total: number) =>
+  total ? `${Math.round((count / total) * 100)}%` : "Not reported";
+const collegeShare = (pattern: RegExp) =>
+  percentage(
+    reportedColleges.filter((record) => pattern.test(record.ugCollege ?? "")).length,
+    reportedColleges.length,
+  );
+const workExperienceStatuses = records
+  .map((record) => {
+    const duration = record.workExMonths?.trim() ?? "";
+    const background = record.workExBackground?.trim() ?? "";
+    const status = `${duration} ${background}`.trim();
+    if (
+      /\b(?:fresher|no|none)\b/i.test(status) ||
+      /^0(?:\.0+)?(?:\s*(?:months?|years?))?$/i.test(duration)
+    ) {
+      return "fresher";
+    }
+    if (!status || /^(?:na|n\/a|unknown|not specified)$/i.test(duration)) return undefined;
+    if (/\d/.test(duration) || /\bexperience(?:d)?\b/i.test(status)) return "experienced";
+    return undefined;
+  })
+  .filter((status): status is "fresher" | "experienced" => status !== undefined);
+const fresherCount = workExperienceStatuses.filter((status) => status === "fresher").length;
+const experiencedCount = workExperienceStatuses.length - fresherCount;
 ---
 
 <BaseLayout title={`${label} · Interview Experiences`}>
@@ -36,21 +75,38 @@ const avgWritten = numericAvg(writtenScores);
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-400">Interview experiences</p>
         <h1 class="mt-2 font-display text-4xl font-semibold tracking-tight text-noir-50 sm:text-5xl">{label}<span class="text-brand-500">.</span></h1>
-        <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-          <div class="flex flex-wrap gap-3">
-            <div class="rounded-xl border border-noir-700 bg-noir-800/70 px-4 py-3">
+        <div class="mt-5">
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="flex h-28 flex-col justify-center rounded-xl border border-noir-700 bg-noir-800/70 px-4 py-3">
               <p class="font-display text-xl font-semibold text-noir-50">{records.length}</p>
-              <p class="text-xs text-noir-200">Interview experiences</p>
+              <p class="text-xs leading-4 text-noir-200">Interview experiences</p>
             </div>
-            {avgWritten && (
-              <div class="rounded-xl border border-noir-700 bg-noir-800/70 px-4 py-3">
-                <p class="font-display text-xl font-semibold text-noir-50">{avgWritten}</p>
-                <p class="text-xs text-noir-200">Average written score</p>
-              </div>
-            )}
+            <div class="flex h-28 flex-col justify-center rounded-xl border border-noir-700 bg-noir-800/60 px-4 py-3">
+              <p class="text-xs font-semibold uppercase leading-4 tracking-wide text-noir-200">
+                Undergraduate institution mix
+              </p>
+              <p class="mt-1 text-xs leading-4 text-noir-50">
+                IIT {collegeShare(/\b(?:IIT|Indian Institute of Technology)\b/i)} ·
+                NIT {collegeShare(/\b(?:NIT|National Institute of Technology)\b/i)} ·
+                BITS {collegeShare(/\b(?:BITS|Birla Institute of Technology and Science)\b/i)}
+              </p>
+            </div>
+            <div class="flex h-28 flex-col justify-center rounded-xl border border-noir-700 bg-noir-800/60 px-4 py-3">
+              <p class="text-xs font-semibold uppercase leading-4 tracking-wide text-noir-200">
+                Work experience status
+              </p>
+              <p class="mt-1 text-xs leading-4 text-noir-50">
+                Work-ex {percentage(experiencedCount, workExperienceStatuses.length)} ·
+                Freshers {percentage(fresherCount, workExperienceStatuses.length)}
+              </p>
+            </div>
+            <div class="flex h-28 flex-col justify-center rounded-xl border border-noir-700 bg-noir-800/70 px-4 py-3">
+              <p class="font-display text-xl font-semibold text-noir-50">{avgWritten ?? "Not reported"}</p>
+              <p class="text-xs leading-4 text-noir-200">Average written score</p>
+            </div>
           </div>
           {!isNarrative && records.length > 0 && (
-            <div class="w-full sm:w-96 sm:self-center">
+            <div class="mt-4 w-full sm:max-w-md">
               <label for="search" class="sr-only">Search this batch</label>
               <input
                 id="search"
@@ -78,7 +134,7 @@ const avgWritten = numericAvg(writtenScores);
 
     {isNarrative ? (
       <div class="mx-auto flex max-w-3xl flex-col gap-6">
-        {records.map((r, index) => (
+        {displayRecords.map((r, index) => (
           <div
             class="experience-card"
             data-record-index={index}
@@ -90,7 +146,7 @@ const avgWritten = numericAvg(writtenScores);
       </div>
     ) : (
       <div id="card-grid" class="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        {records.map((r, index) => (
+        {displayRecords.map((r, index) => (
           <div
             class="experience-card h-full"
             data-search={`${r.name} ${r.ugCollege ?? ""} ${r.gradStream ?? ""} ${r.workExBackground ?? ""} ${r.workExMonths ?? ""} ${r.organizations ?? ""}`}

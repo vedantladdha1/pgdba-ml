@@ -60,15 +60,25 @@ const infoGrid: Array<{ label: string; value?: string }> = [
             Difficulty: {r.interviewDifficulty}/5
           </span>
         )}
+        {r.batch === "2026-28" && r.linkUrl && (
+          <a
+            href={r.linkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 rounded-full bg-brand-600 px-3 py-1 text-xs font-semibold text-white hover:bg-brand-700"
+          >
+            View Profile <span aria-hidden="true">↗</span>
+          </a>
+        )}
       </div>
-      {r.linkUrl && (
+      {r.linkUrl && r.batch !== "2026-28" && (
         <a
           href={r.linkUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand-700 hover:text-brand-800"
         >
-          View profile ↗
+          View Profile ↗
         </a>
       )}
     </div>
