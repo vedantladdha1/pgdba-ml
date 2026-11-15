@@ -62,7 +62,7 @@ const destinations = [
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(86,142,174,0.7),_transparent_55%)]"></div>
     <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-24">
       <div>
-        <p class="inline-flex items-center gap-2 rounded-full border border-noir-700 bg-noir-800/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+        <p class="light-theme-badge inline-flex items-center gap-2 rounded-full border border-noir-700 bg-noir-800/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
           Business · Technology · Statistics
         </p>
         <h1 class="mt-6 font-display text-5xl font-semibold leading-[1.08] tracking-tight text-noir-50 sm:text-6xl lg:text-7xl">
@@ -83,7 +83,7 @@ const destinations = [
           </a>
           <a
             href={withBase("/academics/")}
-            class="rounded-full border border-noir-700 bg-noir-800/60 px-6 py-3 text-sm font-semibold text-noir-50 transition-colors hover:border-brand-400 hover:text-brand-300"
+            class="home-curriculum-cta rounded-full border border-noir-700 bg-noir-800/60 px-6 py-3 text-sm font-semibold text-noir-50 transition-colors hover:border-brand-400 hover:text-brand-300"
           >
             Discover the curriculum
           </a>
@@ -92,13 +92,13 @@ const destinations = [
 
       <div class="relative">
         <div class="absolute -inset-4 rounded-[2rem] bg-brand-600/10 blur-2xl"></div>
-        <div class="relative overflow-hidden rounded-[1.75rem] border border-noir-700 bg-noir-800/70 p-4 shadow-2xl sm:p-6">
+        <div class="light-theme-one-programme relative overflow-hidden rounded-[1.75rem] border border-noir-700 bg-noir-800/70 p-4 shadow-2xl sm:p-6">
           <div class="flex items-center justify-between gap-3 px-2 pb-4">
             <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-400">One programme</p>
-              <p class="mt-1 font-display text-xl font-semibold text-noir-50">A connected academic journey</p>
+              <p class="one-programme-label text-xs font-semibold uppercase tracking-[0.18em] text-brand-400">One programme</p>
+              <p class="one-programme-title mt-1 font-display text-xl font-semibold text-noir-50">A connected academic journey</p>
             </div>
-            <span class="rounded-full border border-noir-700 px-3 py-1 text-xs text-noir-200">24 months</span>
+            <span class="one-programme-meta rounded-full border border-noir-700 px-3 py-1 text-xs text-noir-200">24 months</span>
           </div>
           <div class="rounded-2xl bg-white p-3 sm:p-5">
             <img
@@ -214,7 +214,7 @@ const destinations = [
         <p class="mt-4 leading-relaxed text-noir-200">
           Students learn across all three campuses, combining statistical rigour, management perspective, and technology depth. This site is an alumni-run resource that brings together interview experiences and programme information for future applicants.
         </p>
-        <a href={withBase("/institutes/")} class="mt-6 inline-flex font-semibold text-brand-400 hover:text-brand-300">
+        <a href={withBase("/institutes/")} class="light-theme-solid-pill mt-6 inline-flex rounded-full px-4 py-2 font-semibold text-white transition-colors">
           Meet the three institutes <span aria-hidden="true" class="ml-2">→</span>
         </a>
       </div>

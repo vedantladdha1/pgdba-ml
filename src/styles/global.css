@@ -15,29 +15,30 @@
   --color-brand-800: #284c60;
   --color-brand-900: #1d3949;
 
-  --color-noir-950: #568eae;
-  --color-noir-900: #ffffff;
-  --color-noir-800: #eaf3f8;
-  --color-noir-700: #d3e4ee;
-  --color-noir-400: #727b86;
-  --color-noir-200: #4b5563;
-  --color-noir-50: #171c22;
+  --color-noir-950: #dceaf0;
+  --color-noir-900: #f7f5ef;
+  --color-noir-800: #dce8eb;
+  --color-noir-700: #d2dfe2;
+  --color-noir-400: #727d80;
+  --color-noir-200: #4b595e;
+  --color-noir-50: #182126;
 
-  --color-ink-50: #f6f7f8;
-  --color-ink-100: #eceef1;
-  --color-ink-200: #dde1e6;
-  --color-ink-300: #b6bdc7;
-  --color-ink-400: #8b96a2;
-  --color-ink-500: #64707d;
-  --color-ink-600: #4b5763;
-  --color-ink-700: #37414d;
-  --color-ink-800: #232b34;
-  --color-ink-900: #171c22;
+  --color-ink-50: #e8edeb;
+  --color-ink-100: #e5e9e6;
+  --color-ink-200: #d3dbd8;
+  --color-ink-300: #b2bfbb;
+  --color-ink-400: #899993;
+  --color-ink-500: #65756f;
+  --color-ink-600: #4d5d58;
+  --color-ink-700: #394842;
+  --color-ink-800: #26332f;
+  --color-ink-900: #18231f;
 
-  --color-tint-blue: #eaf4fb;
-  --color-tint-blue-deep: #c2dfef;
+  --color-tint-blue: #e4eff2;
+  --color-tint-blue-deep: #c5dce3;
 
-  --color-paper: #ffffff;
+  --color-paper: #ebe9e1;
+  --color-white: #e6eef0;
 }
 
 /* Dark theme: overrides the same design tokens rather than adding `dark:` variants
@@ -96,6 +97,159 @@ body {
   color: var(--color-ink-800);
   font-family: var(--font-sans);
   transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+:root:not(.dark) [class~="bg-white"] {
+  background-color: #d4e2e5;
+  background-image: linear-gradient(90deg, #c2dfef 0%, #4e92b3 50%, #c2dfef 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+}
+
+:root:not(.dark) [class~="bg-paper"],
+:root:not(.dark) [class~="bg-ink-50"],
+:root:not(.dark) [class~="bg-brand-50"] {
+  background-color: #d4e2e5;
+}
+
+:root:not(.dark) .home-curriculum-cta {
+  background-color: #cbdde1;
+}
+
+:root:not(.dark) .light-theme-solid-pill {
+  border-color: #3b7594;
+  background-color: #3b7594;
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-solid-pill:hover {
+  border-color: #284c60;
+  background-color: #284c60;
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-course-card {
+  background-color: #3b7594;
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-course-card h4,
+:root:not(.dark) .light-theme-course-card span {
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-course-card p {
+  color: #e2f0f8;
+}
+
+:root:not(.dark) .light-theme-footer {
+  border-color: #75afcc;
+  background-color: #3b7594;
+}
+
+:root:not(.dark) .light-theme-footer .footer-text {
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-footer a:hover {
+  color: #e2f0f8;
+}
+
+:root:not(.dark) .light-theme-footer .border-noir-700 {
+  border-color: #75afcc;
+}
+
+:root:not(.dark) .light-theme-one-programme {
+  border-color: #75afcc;
+  background-color: #3b7594;
+}
+
+:root:not(.dark) .light-theme-one-programme .one-programme-label,
+:root:not(.dark) .light-theme-one-programme .one-programme-title,
+:root:not(.dark) .light-theme-one-programme .one-programme-meta {
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-one-programme .one-programme-meta {
+  border-color: #75afcc;
+}
+
+:root:not(.dark) .light-theme-experience-dialog {
+  border-color: #75afcc;
+  background-color: #3b7594;
+  background-image: none;
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-experience-dialog-header {
+  border-color: #75afcc;
+  background-color: #3b7594;
+  background-image: none;
+}
+
+:root:not(.dark) .light-theme-experience-dialog h2,
+:root:not(.dark) .light-theme-experience-dialog h4,
+:root:not(.dark) .light-theme-experience-dialog dd,
+:root:not(.dark) .light-theme-experience-dialog p,
+:root:not(.dark) .light-theme-experience-dialog button {
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-experience-dialog button:hover {
+  color: #182126;
+}
+
+:root:not(.dark) .light-theme-experience-dialog dt {
+  color: #dceaf0;
+}
+
+:root:not(.dark) .light-theme-experience-dialog .border-ink-100 {
+  border-color: #75afcc;
+}
+
+:root:not(.dark) .light-theme-experience-dialog .bg-brand-50 {
+  background-color: #284c60;
+}
+
+:root:not(.dark) [class~="hover:text-brand-300"]:hover,
+:root:not(.dark) [class~="hover:text-brand-400"]:hover {
+  color: #284c60;
+}
+
+:root:not(.dark) .experience-stat {
+  border-color: #315f78;
+  background-color: #315f78;
+}
+
+:root:not(.dark) .experience-stat p {
+  color: #fff;
+}
+
+:root:not(.dark) .light-theme-highlight {
+  color: #315f78;
+}
+
+:root:not(.dark) .one-programme-label {
+  color: #284c60;
+}
+
+:root:not(.dark) .light-theme-badge {
+  border-color: #284c60;
+  background-color: #315f78;
+  color: #fff;
+}
+
+:root:not(.dark) .nav-link-active,
+:root:not(.dark) button[aria-selected="true"],
+:root:not(.dark) [role="tab"][aria-selected="true"],
+:root:not(.dark) button[aria-pressed="true"] {
+  background-color: #284c60;
+  color: #fff;
+}
+
+:root:not(.dark) button:active {
+  background-color: #284c60;
+  color: #fff;
 }
 
 h1, h2, h3, h4 {
