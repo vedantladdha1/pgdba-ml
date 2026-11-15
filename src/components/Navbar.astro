@@ -36,10 +36,11 @@ function isActive(href: string) {
       {navItems.map((item) => (
         <a
           href={item.href}
+          aria-current={isActive(item.href) ? "page" : undefined}
           class:list={[
-            "whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium transition-colors",
+            "nav-link whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium transition-colors",
             isActive(item.href)
-              ? "bg-brand-600/15 text-brand-400"
+              ? "nav-link-active bg-brand-600/15 text-brand-400"
               : "text-noir-200 hover:bg-noir-800 hover:text-noir-50",
           ]}
         >

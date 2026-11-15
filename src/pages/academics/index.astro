@@ -17,7 +17,7 @@ const totalCore = curriculum.reduce(
   <section class="relative overflow-hidden bg-gradient-to-b from-noir-900 via-noir-900 to-noir-950">
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(86,142,174,0.65),_transparent_60%)]"></div>
     <div class="relative mx-auto max-w-4xl px-5 py-16 text-center sm:py-20">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-400">Academics · PGDBA</p>
+      <p class="light-theme-highlight text-sm font-semibold uppercase tracking-[0.2em] text-brand-400">Academics · PGDBA</p>
       <h1 class="mt-4 font-display text-4xl font-semibold tracking-tight text-noir-50 sm:text-6xl">
         <span class="text-ink-900">Curriculum</span><span class="text-brand-500">.</span>
       </h1>
@@ -87,7 +87,7 @@ const totalCore = curriculum.reduce(
         {curriculum.flatMap((module) =>
           module.courses.map((course) => (
             <article
-              class="rounded-2xl border border-ink-200 bg-white p-4 shadow-sm"
+              class="light-theme-course-card rounded-2xl border border-ink-200 bg-white p-4 shadow-sm"
               data-global-course-result
               data-course-name={course.name.toLowerCase()}
               data-course-type={course.type}
@@ -167,7 +167,7 @@ const totalCore = curriculum.reduce(
         <div class="mt-6 grid gap-3 sm:grid-cols-2">
           {module.courses.map((course) => (
             <article
-              class="rounded-2xl border border-ink-100 bg-paper p-4"
+              class="light-theme-course-card rounded-2xl border border-ink-100 bg-paper p-4"
               data-course-card
               data-course-name={course.name.toLowerCase()}
               data-course-type={course.type}
