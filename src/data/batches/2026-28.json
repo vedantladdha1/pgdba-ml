@@ -1603,6 +1603,27 @@
       },
       "tips": "- Focus more on mathematics and probability theory\n- Be well prepared with your resume and it's allied areas.\n- Be quantitiave and don't talk in loose terms as you will be expected to be objective and precise",
       "linkUrl": "https://www.linkedin.com/in/aanand-daga"
+    },
+    {
+      "id": "2026-28-061",
+      "batch": "2026-28",
+      "sourceFormat": "card-grid",
+      "name": "Saswata Kayal",
+      "ugCollege": "Jadavpur University",
+      "ugBackground": "Engineering",
+      "gradYear": "2024",
+      "gradStream": "CSE, B. Tech",
+      "workExMonths": "Fresher",
+      "workExBackground": "Fresher",
+      "resourcesWritten": "PYQs",
+      "resourcesInterview": "AI",
+      "priorCoding": "Yes",
+      "questions": {
+        "general": "- Basic \"Why PGDBA?\" and \"How PGDBA?\" questions.",
+        "mathStats": "- They asked me a Linear algebra question. Try to explain every bit of the solution and don't leave any stones unturned.",
+        "gk": "- One interviewer asked me an economics trick question: impact (value of $ vs value of ₹) related to India's growth and development.\n- You may be asked about recent developments in AI and geopolitics."
+      },
+      "tips": "1. According to me, prerequisites for this course are: good grasp of calculus, geometry, probability, linear algebra, and basic coding.\n2. For the written exam, basic 10+2 concepts are enough, but try to solve all the PYQs.\n3. For interviews, don't fumble at all. Always be impromptu and confident in your answers."
     }
   ]
 }
