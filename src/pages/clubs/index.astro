@@ -239,6 +239,32 @@ const clubs = [
     background: rgba(233, 238, 240, 0.9);
   }
 
+  :root:not(.dark) .team-card {
+    background: #3b7594;
+    border-color: #75afcc;
+    color: #fff;
+  }
+
+  :root:not(.dark) .team-card h2,
+  :root:not(.dark) .team-card p,
+  :root:not(.dark) .team-card a,
+  :root:not(.dark) .team-card button,
+  :root:not(.dark) .team-card .team-description-preview {
+    color: #fff;
+  }
+
+  :root:not(.dark) .team-label {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #f2f8fc;
+  }
+
+  :root:not(.dark) .team-number {
+    background: #284c60;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+
   .team-card::before {
     position: absolute;
     inset: 0 0 auto;
