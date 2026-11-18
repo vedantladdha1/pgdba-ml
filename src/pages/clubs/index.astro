@@ -235,8 +235,10 @@ const clubs = [
 </script>
 
 <style>
-  .team-card {
-    background: rgba(233, 238, 240, 0.9);
+  :root.dark .team-card {
+    background-color: var(--color-white);
+    background-image: none;
+    border-color: var(--color-ink-200);
   }
 
   :root:not(.dark) .team-card {
