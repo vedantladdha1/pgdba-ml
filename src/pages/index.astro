@@ -207,9 +207,14 @@ const destinations = [
           Admissions &amp; selection roadmap<span class="text-brand-600">.</span>
         </h2>
       </div>
-      <a href={withBase("/eligibility/")} class="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800">
-        View eligibility criteria <span aria-hidden="true">→</span>
-      </a>
+      <div class="flex flex-wrap gap-x-5 gap-y-2">
+        <a href={withBase("/admissions/")} class="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800">
+          Full admissions process <span aria-hidden="true">→</span>
+        </a>
+        <a href={withBase("/eligibility/")} class="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800">
+          View eligibility criteria <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
 
     <div class="grid gap-4 lg:grid-cols-3">
