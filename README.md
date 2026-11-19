@@ -1,42 +1,57 @@
 # PGDBA Website
 
-A free, GitHub-Pages-hosted site for the PGDBA program: an About page, a browsable archive of
-student interview experiences across batches 2015-17 through 2026-28, and a committee-only
-admin tool for publishing new batches without any paid backend.
+A static, GitHub Pages-hosted resource about the Post Graduate Diploma in Business Analytics. It brings together programme and curriculum information, institute profiles, admissions guidance, placement and internship statistics, FAQs, student teams, and interview experiences from PGDBA batches.
 
-See [`.plan/README.md`](./.plan/README.md) for the full project plan, architecture, and
-roadmap - read that first before making structural changes.
+See [`.plan/README.md`](./.plan/README.md) for the architecture notes and project documentation index.
 
 ## Stack
 
-Astro (static output) + Tailwind CSS. No server, no database - interview data lives as
-validated JSON in `src/data/batches/`.
+Astro static output, Tailwind CSS, and TypeScript. Interview experience data is stored as validated JSON in `src/data/batches/`; the site does not require a runtime server or database.
 
-## Development
+## Development and validation
 
 ```sh
 npm install
-npm run dev            # http://localhost:4321
-npm run build           # -> dist/
-npm run migrate         # re-run archive/*.html -> src/data/batches/*.json
-npm run validate-data    # validate all batch JSON against the schema
-npm run import-2026-28   # regenerate 2026-28.json from its archived raw source
+npm run dev             # http://localhost:4321
+npm run validate-data   # validate batch data
+npm run build           # generate static site in dist/
+npm run preview         # preview the production build
+npm run migrate         # re-run archive HTML -> batch JSON migration
+npm run import-2026-28  # regenerate 2026-28.json from its archived raw source
 ```
+
+## Public pages
+
+| Route | Content |
+|---|---|
+| `/` | Programme introduction, PGDBA journey, admissions roadmap, programme highlights, and site guide |
+| `/academics/` | Combined Programme & Academics page: institute-wise information and semester/course catalogue |
+| `/institutes/` | Compatibility redirect to `/academics/#institutes` |
+| `/institutes/isi-kolkata/`, `/institutes/iit-kharagpur/`, `/institutes/iim-calcutta/` | Individual institute profiles |
+| `/admissions/` | Admission process from application through offer and joining; cycle-specific test and selection details are labeled |
+| `/eligibility/` | Eligibility and PI shortlisting criteria |
+| `/placements/` | Reported final placement and internship statistics |
+| `/experiences/` | Redirect to the latest interview-experience batch |
+| `/experiences/[batch]/` | Shareable interview-experience archive for a batch |
+| `/clubs/` | PGDBA student teams |
+| `/faqs/` | Programme FAQs |
+| `/connect/` | Social channels and AINA magazine |
+| `/admin/` | Committee tool for importing and publishing experience data |
 
 ## Project structure
 
 ```
-archive/            original WordPress HTML exports + the sample Excel form (source of truth)
-scripts/             migration + validation scripts
-src/data/batches/    the site's interview content, one JSON file per batch
-src/data/            shared institute and curriculum catalogues
-src/lib/             shared schema + header-alias map (used by migration, build, and admin CMS)
-src/components/       Navbar, Footer, StudentCard, NarrativeArticle, BatchSwitcher, StatStrip
-src/pages/            index (About), experiences/, faqs/, eligibility/, institutes/, academics/, clubs/, connect/, admin/
-.plan/                 project plan - read before making structural changes
+archive/               original WordPress HTML exports and source spreadsheets
+scripts/               migration, import, and validation scripts
+src/components/        shared navigation, cards, charts, and layout elements
+src/data/batches/      interview experiences, one JSON file per batch
+src/data/              institute and curriculum catalogues
+src/lib/                schemas, batch helpers, URL helpers, and GitHub API integration
+src/pages/              Astro routes listed above
+src/styles/global.css   shared theme tokens and responsive visual styles
+.plan/                  architecture, data, design, CMS, deployment, and roadmap docs
 ```
 
-The 2026-28 batch was imported from `archive/2026-28_old_raw.json`. Its question lists are
-rendered as readable text, absent optional values are omitted, and text/range scores are
-preserved verbatim rather than interpreted as numeric scores. Run `npm run import-2026-28`
-to regenerate its site data from the archived source.
+The shared visual system supports light and dark themes. Card-like content boxes use a raised shadow and a subtle hover lift; reduced-motion preferences are respected. Course and interview data should be validated after changes with `npm run validate-data`, followed by `npm run build`.
+
+The 2026–28 batch was imported from `archive/2026-28_old_raw.json`. Optional values are omitted where absent, and text/range scores are preserved rather than interpreted as numeric scores. Run `npm run import-2026-28` to regenerate the site data from the archived source.

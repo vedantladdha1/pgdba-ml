@@ -62,23 +62,27 @@ type Batch = {
 };
 ```
 
-## Source format audit (evidence gathered directly from the files)
+## Historical source format audit (evidence gathered directly from the files)
+
+The original HTML migration covered batches through 2025–27. The current site also contains
+2026–28 data imported from its archived raw source. There are twelve batch JSON files in
+`src/data/batches/`; the historical HTML parser still handles the four formats described below.
 
 | File | Format | Evidence |
 |---|---|---|
 | `2015-17.html`, `2016-18.html`, `2017-19.html` | **narrative** | Free-text: `<i>Name - bio</i>` followed by a `<p>` quote block, entries separated by `<p style="text-align:center">******</p>`, parts separated by `<hr class="part-divider">` + `<h2 class="part-title">Part N</h2>`. |
 | `2018-20.html` | **table-stacked** | 47 `<table width="624">` elements, each a *single-column* table where a `<tr><td><strong>Label</strong></td></tr>` row is immediately followed by a `<tr><td>Value</td></tr>` row (label and value are separate table rows, not side-by-side cells). |
 | `2019-21.html` … `2024-26.html` | **table-kv** | WordPress block tables: `<figure class="wp-block-table ..."><table>...<tr><td><strong>Label</strong></td><td>Value</td></tr>...</table></figure>`, one table per student, student name in a preceding `<h2 class="wp-block-heading">`. Counts confirmed: 41/50/45/58/62/59 tables across these 6 files. |
-| `2025-27.html` | **card-grid** | Modern hand-built HTML: `<div class="student-card">` containing `<h2>Name</h2>`, a badges row (score, work months), and `<div class="data-item">`/`<div class="highlight-section">` blocks each with a `.data-label` + `.data-value` div pair. Cleanest source format of the eleven - was clearly already generated from the same kind of Excel this project's Admin tool will produce.
+| `2025-27.html` | **card-grid** | Modern hand-built HTML: `<div class="student-card">` containing `<h2>Name</h2>`, a badges row (score, work months), and `<div class="data-item">`/`<div class="highlight-section">` blocks each with a `.data-label` + `.data-value` div pair.
 
-So: **4 parser adapters needed**, not 11. Each adapter's only job is to walk its DOM shape and
+So: **4 parser adapters** cover the historical HTML source set. Each adapter's only job is to walk its DOM shape and
 emit `{ label, value }` pairs (or narrative text) per student; a shared **header-alias map**
 then normalizes labels like `"College Name"` (2018-20) / `"Undergraduate College / University"`
 (2019+) / `"Undergrad College"` (2025-27) all onto the single schema field `ugCollege`. This
 alias map is also reused by the live Admin CMS (see [`04-admin-cms.md`](./04-admin-cms.md)),
 since new Excel exports will have the same year-to-year header drift.
 
-## Migration script plan (`scripts/migrate-html-batches.mjs`)
+## Migration script (`scripts/migrate-html-batches.ts`)
 
 - One-time, run locally with Node.js (not part of the live site). Uses `cheerio` to parse each
   archived HTML file.
@@ -105,7 +109,7 @@ since new Excel exports will have the same year-to-year header drift.
 - `src/lib/schema.ts` defines the schema once with **Zod**.
 - Astro's content collections use this schema directly (`src/content/config.ts`), so `astro
   build` **fails loudly** if any batch JSON is malformed - no bad data silently ships.
-- `scripts/validate-data.mjs` runs the same schema against all files for a fast pre-commit /
+- `scripts/validate-data.ts` runs the same schema against all files for a fast pre-commit /
   pre-PR check, and is reused by the Admin CMS preview step (client-side, same schema compiled
   for the browser) so an admin gets the same validation before publishing a new batch.
 

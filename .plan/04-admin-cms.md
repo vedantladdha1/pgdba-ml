@@ -4,6 +4,9 @@ This is the feature that replaces "a person with database access" with "a static
 talks to GitHub directly." It has to be trustworthy (won't silently corrupt data) and legible
 (a non-developer committee member can use it a year from now without re-reading this doc).
 
+The admin utility remains outside the public primary navigation. Open `/admin/` directly when
+you need to manage interview data; do not assume there is a public footer link to it.
+
 ## End-to-end flow
 
 1. **Unlock**: admin pastes a GitHub Personal Access Token into a field on `/admin/`. Stored in

@@ -2,108 +2,79 @@
 
 ## Stack
 
-- **Astro** (static output mode, `output: 'static'`) - the whole site is pre-rendered to plain
-  HTML/CSS/JS at build time. No server runtime, no database, so it deploys to GitHub Pages for
-  free and stays that way regardless of traffic.
-- **Vanilla/minimal client JS** for interactivity that genuinely needs the browser: the batch
-  year-switcher, card search/filter on the Experiences page, and the entire Admin CMS flow.
-  No React/Vue - Astro's islands mean we only ship JS where it's needed, keeping the public
-  pages fast and simple.
-- **SheetJS (xlsx)** loaded client-side only on `/admin/`, for parsing the uploaded Excel file
-  in-browser.
-- **GitHub REST API** (`Contents` + `Pull Requests` endpoints), called client-side only on
-  `/admin/`, using a PAT the admin supplies. This is the entire "backend."
+- **Astro static output** pre-renders the site as HTML, CSS, and browser JavaScript for GitHub Pages.
+- **Tailwind CSS** and shared design tokens provide responsive layouts and light/dark theme styling.
+- **TypeScript** is used for application code, schemas, shared data, and site helpers.
+- **JSON batch data** under `src/data/batches/` is validated during data checks and the site build.
+- Small client-side scripts support features such as course filtering, curriculum tabs, theme selection, and the admin tool.
+- The admin page uses SheetJS in the browser to parse Excel uploads and the GitHub REST API to publish updates.
 
-## Why Astro over the alternatives considered
+## Route structure
 
-- Plain HTML/CSS/JS would mean hand-duplicating the student-card markup across 11 batches and
-  ~500+ individual profiles - error-prone and painful to restyle later.
-- A React SPA adds routing/hydration complexity and a heavier JS payload for a content site
-  that's 95% static reading, not interaction.
-- Astro's **content collections** (Zod-schema-validated JSON/Markdown) are a natural fit: the
-  migrated batch data becomes typed, validated content, and pages are generated from it with
-  `getStaticPaths`.
+| Route | Responsibility |
+|---|---|
+| `/` | Programme overview, curriculum journey preview, admissions roadmap, and guide to site content |
+| `/academics/` | Combined Programme & Academics page, including institute overview and course catalogue |
+| `/institutes/` | Compatibility redirect to `/academics/#institutes` |
+| `/institutes/[slug]/` | Static profile for each of the three participating institutes |
+| `/admissions/` | Application, test, interview, selection, and offer process guide |
+| `/eligibility/` | Eligibility and PI shortlisting reference |
+| `/placements/` | Placement and internship trend information |
+| `/experiences/` | Redirect to the latest interview batch |
+| `/experiences/[batch]/` | Batch-specific interview experience archive |
+| `/clubs/`, `/faqs/`, `/connect/` | Student teams, programme FAQs, and social/contact links |
+| `/admin/` | Unlinked committee utility for preparing batch data |
 
-## How "admin publishing with no backend" actually works
+Primary navigation presents the programme and curriculum as a single **Programme & Academics** destination. The individual institute pages remain directly accessible from the combined page.
 
-This is the crux of the whole system, so it's worth stating plainly:
+## Data flow
 
-1. The **data the site renders lives in the git repo** as JSON files
-   (`src/data/batches/2024-26.json`, etc.).
-2. The **Admin page is just another static page** in the same Astro build - it ships JS that
-   runs entirely in the visitor's browser.
-3. When the admin uploads an Excel file, that JS parses it, builds a new/updated JSON batch
-   file in memory, and then calls the **GitHub REST API directly from the browser** (using
-   `fetch`, authenticated with the PAT the admin pasted in) to write that JSON file into the
-   repo - either as a direct commit to `main` or (recommended default, see
-   [`04-admin-cms.md`](./04-admin-cms.md)) as a new branch + pull request.
-4. A **GitHub Actions workflow** is already configured to rebuild and redeploy the site on any
-   push/merge to `main`. So the moment the PR is merged (or the direct commit lands), GitHub
-   Pages rebuilds automatically - no human runs a build command, no server is ever provisioned.
-
-This pattern is the same idea behind git-based headless CMS tools (Netlify/Decap CMS,
-Tina, etc.), just built directly rather than pulling in a third-party CMS dependency - because
-none of the popular ones have a zero-backend, GitHub-Pages-only mode that doesn't need an
-OAuth proxy server.
-
-## Repo layout (target)
-
-```
-/
-├── .github/workflows/deploy.yml       # build + deploy to GitHub Pages on push to main
-├── .plan/                             # this planning folder
-├── archive/                           # original HTML/Excel sources, kept for provenance
-│   ├── Interview_Experiences/*.html   #   (moved here, not shipped in the build)
-│   └── Excel/*.xlsx
-├── public/
-│   └── images/                        # logo, banner (moved from /images)
-├── scripts/
-│   ├── migrate-html-batches.mjs       # one-time: parse archive/*.html -> src/data/batches/*.json
-│   └── validate-data.mjs              # re-validate all batch JSON against the schema
-├── src/
-│   ├── components/
-│   │   ├── Navbar.astro
-│   │   ├── Footer.astro
-│   │   ├── StudentCard.astro
-│   │   ├── NarrativeArticle.astro     # renders old free-text batches (2015-17 etc.)
-│   │   ├── BatchSwitcher.astro
-│   │   └── StatStrip.astro
-│   ├── content/
-│   │   └── config.ts                  # Zod schema for the batches collection
-│   ├── data/
-│   │   └── batches/
-│   │       ├── 2015-17.json
-│   │       ├── ...
-│   │       └── 2025-27.json
-│   ├── layouts/
-│   │   └── BaseLayout.astro
-│   ├── lib/
-│   │   ├── schema.ts                  # shared Zod schema (used by build + admin CMS JS)
-│   │   ├── header-aliases.ts          # column-name -> schema-field fuzzy alias map
-│   │   └── github-api.ts              # thin wrapper around the GitHub Contents/PR API
-│   └── pages/
-│       ├── index.astro                # About (homepage)
-│       ├── experiences/
-│       │   ├── index.astro            # defaults to most recent batch
-│       │   └── [batch].astro          # one static page per batch, via getStaticPaths
-│       └── admin/
-│           └── index.astro            # upload -> map -> preview -> publish
-├── astro.config.mjs
-└── package.json
+```text
+archive sources ── migration/import scripts ──> src/data/batches/*.json
+                                                  │
+                                        schema/data validation
+                                                  │
+                                             Astro build
+                                                  │
+                                             static dist/
+                                                  │
+                                       GitHub Pages deployment
 ```
 
-## Data flow summary
+Batch JSON is the source rendered by interview pages. Institute and curriculum information are maintained in shared TypeScript catalogues under `src/data/` and used by the combined Programme & Academics page.
 
+## Admin publishing flow
+
+The admin route is a static page whose browser code:
+
+1. Parses the uploaded spreadsheet locally.
+2. Maps its columns to the shared interview schema.
+3. Validates records and previews the resulting batch.
+4. Uses a user-provided GitHub token to publish the JSON update through the GitHub API.
+
+The admin workflow and token-handling details are documented in [`04-admin-cms.md`](./04-admin-cms.md). Never commit or log personal access tokens.
+
+## Repository layout
+
+```text
+.
+├── .github/workflows/deploy.yml     # data validation, static build, Pages deployment
+├── .plan/                           # project documentation
+├── archive/                         # historical HTML and source files
+├── public/images/                   # site images and logos
+├── scripts/                          # batch migration/import/validation
+└── src/
+    ├── components/                   # shared Astro components
+    ├── data/
+    │   ├── batches/                  # interview batch JSON
+    │   ├── curriculum.ts             # semester and course catalogue
+    │   └── institutes.ts             # participating institute information
+    ├── layouts/BaseLayout.astro      # shared head, navigation, footer, theme setup
+    ├── lib/                          # schemas and application helpers
+    ├── pages/                        # static routes and dynamic batch/profile pages
+    └── styles/global.css             # shared theme palette and card styling
 ```
-archive/*.html, archive/*.xlsx           (one-time, historical)
-        │  migrate-html-batches.mjs
-        ▼
-src/data/batches/*.json  ──────────────┐
-        │  (Astro content collection)  │
-        ▼                              │
-static pages at build time             │  admin uploads a NEW batch's Excel
-(About, Experiences, per-batch)        │  at /admin/ → parsed in-browser →
-        ▲                              │  written back here via GitHub API
-        └──────────────────────────────┘
-                 GitHub Actions rebuilds + redeploys on every merge to main
-```
+
+## Shared design behavior
+
+The global stylesheet defines light and dark token palettes. Card-like content boxes have a raised shadow and a subtle hover lift; the motion is disabled for users who request reduced motion. Page-specific treatments such as solid course cards, team cards, modal dialogs, and dark hero panels remain scoped to their components.
