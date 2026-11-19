@@ -99,6 +99,49 @@ body {
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
+:where(article, li, div, a):not(dialog):is(
+  [class~="shadow-sm"],
+  [class~="shadow-md"],
+  [class~="shadow-lg"],
+  [class~="shadow-xl"],
+  [class~="shadow-2xl"]
+),
+:where(article, li)[class*="rounded-"][class*="border-"],
+:where(div)[class~="bg-white"][class*="rounded-"][class*="border-"] {
+  box-shadow: 0 8px 18px rgb(28 54 66 / 12%);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :where(article, li, div, a):not(dialog):is(
+    [class~="shadow-sm"],
+    [class~="shadow-md"],
+    [class~="shadow-lg"],
+    [class~="shadow-xl"],
+    [class~="shadow-2xl"]
+  ):hover,
+  :where(article, li)[class*="rounded-"][class*="border-"]:hover,
+  :where(div)[class~="bg-white"][class*="rounded-"][class*="border-"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgb(28 54 66 / 18%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(article, li, div, a):not(dialog):is(
+    [class~="shadow-sm"],
+    [class~="shadow-md"],
+    [class~="shadow-lg"],
+    [class~="shadow-xl"],
+    [class~="shadow-2xl"]
+  ),
+  :where(article, li)[class*="rounded-"][class*="border-"],
+  :where(div)[class~="bg-white"][class*="rounded-"][class*="border-"] {
+    transition: none;
+    transform: none;
+  }
+}
+
 :root:not(.dark) [class~="bg-white"] {
   background-color: #d4e2e5;
   background-image: linear-gradient(90deg, #c2dfef 0%, #4e92b3 50%, #c2dfef 100%);
