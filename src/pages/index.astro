@@ -10,11 +10,11 @@ const latest = await getLatestBatch();
 
 const destinations = [
   {
-    eyebrow: "Learn about the programme",
-    title: "The PGDBA experience",
-    description: "Explore the three institutes and the academic journey that connects them.",
-    href: "/institutes/",
-    link: "Explore the institutes",
+    eyebrow: "Programme & academics",
+    title: "Three institutes, one journey",
+    description: "Explore each institute's contribution and the semester-wise curriculum across the programme.",
+    href: "/academics/#institutes",
+    link: "Explore the programme",
   },
   {
     eyebrow: "Plan your application",
@@ -22,13 +22,6 @@ const destinations = [
     description: "Review the eligibility and selection criteria for 2026 admissions.",
     href: "/eligibility/",
     link: "View eligibility",
-  },
-  {
-    eyebrow: "Explore the coursework",
-    title: "Academics & curriculum",
-    description: "Browse the semester-wise course catalogue and programme structure.",
-    href: "/academics/",
-    link: "Explore academics",
   },
   {
     eyebrow: "Prepare with real stories",
@@ -259,7 +252,7 @@ const destinations = [
         <p class="mt-4 leading-relaxed text-noir-200">
           Students learn across all three campuses, combining statistical rigour, management perspective, and technology depth. This site is an alumni-run resource that brings together interview experiences and programme information for future applicants.
         </p>
-        <a href={withBase("/institutes/")} class="light-theme-solid-pill mt-6 inline-flex rounded-full px-4 py-2 font-semibold text-white transition-colors">
+        <a href={withBase("/academics/#institutes")} class="light-theme-solid-pill mt-6 inline-flex rounded-full px-4 py-2 font-semibold text-white transition-colors">
           Meet the three institutes <span aria-hidden="true" class="ml-2">→</span>
         </a>
       </div>

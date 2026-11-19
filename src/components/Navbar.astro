@@ -3,8 +3,7 @@ import { withBase } from "../lib/url";
 
 const navItems = [
   { href: withBase("/"), label: "About" },
-  { href: withBase("/academics/"), label: "Academics" },
-  { href: withBase("/institutes/"), label: "Institutes" },
+  { href: withBase("/academics/"), label: "Programme & Academics" },
   { href: withBase("/placements/"), label: "Placements & Internships" },
   { href: withBase("/admissions/"), label: "Admissions" },
   { href: withBase("/eligibility/"), label: "Eligibility" },
@@ -15,9 +14,14 @@ const navItems = [
 ];
 const currentPath = Astro.url.pathname;
 const homeHref = withBase("/");
+const academicsHref = withBase("/academics/");
+const institutesHref = withBase("/institutes/");
 
 function isActive(href: string) {
   if (href === homeHref) return currentPath === homeHref;
+  if (href === academicsHref) {
+    return currentPath.startsWith(academicsHref) || currentPath.startsWith(institutesHref);
+  }
   return currentPath.startsWith(href);
 }
 ---
