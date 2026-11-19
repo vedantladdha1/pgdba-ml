@@ -139,7 +139,7 @@ const destinations = [
     </div>
     <ol class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
       {curriculum.map((module, index) => (
-        <li class="flex min-h-56 flex-col rounded-2xl border border-ink-200 bg-white p-5 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl motion-reduce:transform-none motion-reduce:transition-none">
+        <li class="floating-card flex min-h-56 flex-col rounded-2xl border border-ink-200 bg-white p-5 shadow-md">
           <div class="flex items-center justify-between gap-3">
             <span class="flex h-9 w-9 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">
               0{index + 1}
@@ -176,7 +176,7 @@ const destinations = [
       {destinations.map((destination, index) => (
         <a
           href={withBase(destination.href)}
-          class="group flex min-h-56 flex-col rounded-3xl border border-ink-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg sm:p-7"
+          class="floating-card group flex min-h-56 flex-col rounded-3xl border border-ink-200 bg-white p-6 shadow-sm transition-colors hover:border-brand-300 sm:p-7"
         >
           <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-sm font-semibold text-brand-700">
             0{index + 1}
@@ -211,7 +211,7 @@ const destinations = [
     </div>
 
     <div class="grid gap-4 lg:grid-cols-3">
-      <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
+      <article class="floating-card rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
         <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">01</span>
         <h3 class="mt-5 font-display text-xl font-semibold text-ink-900">Check eligibility</h3>
         <p class="mt-3 leading-relaxed text-ink-600">
@@ -219,7 +219,7 @@ const destinations = [
         </p>
       </article>
 
-      <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
+      <article class="floating-card rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
         <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">02</span>
         <h3 class="mt-5 font-display text-xl font-semibold text-ink-900">Appearing for the test</h3>
         <p class="mt-3 leading-relaxed text-ink-600">
@@ -227,7 +227,7 @@ const destinations = [
         </p>
       </article>
 
-      <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
+      <article class="floating-card rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
         <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">03</span>
         <h3 class="mt-5 font-display text-xl font-semibold text-ink-900">Interview &amp; final selection</h3>
         <p class="mt-3 leading-relaxed text-ink-600">
@@ -245,7 +245,7 @@ const destinations = [
           Analytics, through three lenses<span class="text-brand-500">.</span>
         </h2>
       </div>
-      <div class="rounded-3xl border border-noir-700 bg-noir-900/70 p-6 sm:p-8">
+      <div class="floating-card rounded-3xl border border-noir-700 bg-noir-900/70 p-6 sm:p-8">
         <p class="leading-relaxed text-noir-200">
           The Post Graduate Diploma in Business Analytics (PGDBA) is a full-time, 24-month programme jointly offered by the Indian Statistical Institute (ISI), Kolkata; the Indian Institute of Management (IIM) Calcutta; and the Indian Institute of Technology (IIT) Kharagpur.
         </p>
@@ -268,28 +268,28 @@ const destinations = [
     </div>
 
     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-      <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
+      <article class="floating-card rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
         <h3 class="font-display text-xl font-semibold text-ink-900">Three-institute learning</h3>
         <p class="mt-3 leading-relaxed text-ink-600">
           Students experience management, statistics, and technology together, creating a broader and more grounded understanding of analytics in practice.
         </p>
       </article>
 
-      <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
+      <article class="floating-card rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
         <h3 class="font-display text-xl font-semibold text-ink-900">Applied analytics</h3>
         <p class="mt-3 leading-relaxed text-ink-600">
           The programme develops a strong mix of quantitative thinking, structured problem solving, and business interpretation for real-world decisions.
         </p>
       </article>
 
-      <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
+      <article class="floating-card rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
         <h3 class="font-display text-xl font-semibold text-ink-900">Hands-on exposure</h3>
         <p class="mt-3 leading-relaxed text-ink-600">
           Academic depth is paired with a six-month industry internship, helping students connect classroom learning to practical projects and outcomes.
         </p>
       </article>
 
-      <article class="rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
+      <article class="floating-card rounded-3xl border border-ink-200 bg-white p-6 shadow-sm">
         <h3 class="font-display text-xl font-semibold text-ink-900">Career readiness</h3>
         <p class="mt-3 leading-relaxed text-ink-600">
           Graduates are prepared for roles in business analytics, data science, consulting, finance, and related fields that rely on analytical decision-making.
@@ -299,7 +299,7 @@ const destinations = [
   </section>
 
   <section class="mx-auto max-w-6xl px-5 py-14 sm:py-16">
-    <div class="flex flex-col gap-6 rounded-3xl border border-brand-200 bg-brand-50 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+    <div class="floating-card flex flex-col gap-6 rounded-3xl border border-brand-200 bg-brand-50 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">Latest experiences</p>
         <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">

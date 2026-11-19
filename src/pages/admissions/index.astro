@@ -40,7 +40,7 @@ const stages = [
         <li>
           <a
             href={stage.href}
-            class="group flex h-full items-center gap-3 rounded-2xl border border-ink-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md"
+            class="floating-card group flex h-full items-center gap-3 rounded-2xl border border-ink-200 bg-white p-4 transition-colors hover:border-brand-300"
           >
             <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-semibold text-white">{stage.number}</span>
             <span class="font-semibold text-ink-800 group-hover:text-brand-800">{stage.label}</span>
@@ -60,7 +60,7 @@ const stages = [
     </aside>
 
     <div class="space-y-6">
-      <article id="application" class="scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
+      <article id="application" class="floating-card scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">Stage 01</p>
         <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">Online application</h2>
         <p class="mt-4 leading-relaxed text-ink-700">
@@ -74,7 +74,7 @@ const stages = [
         </a>
       </article>
 
-      <article id="admission-test" class="scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
+      <article id="admission-test" class="floating-card scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">Stage 02</p>
         <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">Admit card and PGDBA Admission Test</h2>
         <p class="mt-4 leading-relaxed text-ink-700">
@@ -129,7 +129,7 @@ const stages = [
         </details>
       </article>
 
-      <article id="answer-key-results" class="scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
+      <article id="answer-key-results" class="floating-card scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">Stage 03</p>
         <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">Answer key, results, and PI shortlisting</h2>
         <p class="mt-4 leading-relaxed text-ink-700">
@@ -143,7 +143,7 @@ const stages = [
         </p>
       </article>
 
-      <article id="personal-interview" class="scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
+      <article id="personal-interview" class="floating-card scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">Stage 04</p>
         <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">Personal Interview</h2>
         <p class="mt-4 leading-relaxed text-ink-700">
@@ -157,7 +157,7 @@ const stages = [
         </a>
       </article>
 
-      <article id="final-selection" class="scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
+      <article id="final-selection" class="floating-card scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">Stage 05</p>
         <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">Final score and merit list</h2>
         <p class="mt-4 leading-relaxed text-ink-700">
@@ -227,7 +227,7 @@ const stages = [
         </p>
       </article>
 
-      <article id="admission-confirmation" class="scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
+      <article id="admission-confirmation" class="floating-card scroll-mt-24 rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-8">
         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">After selection</p>
         <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">Offer confirmation and joining</h2>
         <p class="mt-4 leading-relaxed text-ink-700">

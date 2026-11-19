@@ -83,6 +83,16 @@
   --color-white: #1b2129;
 }
 
+:root {
+  --card-shadow: 0 8px 18px rgb(28 54 66 / 12%);
+  --card-shadow-raised: 0 16px 30px rgb(28 54 66 / 18%);
+}
+
+:root.dark {
+  --card-shadow: 0 8px 22px rgb(0 0 0 / 24%), 0 1px 0 rgb(255 255 255 / 3%);
+  --card-shadow-raised: 0 16px 30px rgb(0 0 0 / 34%), 0 1px 0 rgb(255 255 255 / 4%);
+}
+
 html {
   scroll-behavior: smooth;
   color-scheme: light;
@@ -99,47 +109,33 @@ body {
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-:where(article, li, div, a):not(dialog):is(
-  [class~="shadow-sm"],
-  [class~="shadow-md"],
-  [class~="shadow-lg"],
-  [class~="shadow-xl"],
-  [class~="shadow-2xl"]
-),
-:where(article, li)[class*="rounded-"][class*="border-"],
-:where(div)[class~="bg-white"][class*="rounded-"][class*="border-"] {
-  box-shadow: 0 8px 18px rgb(28 54 66 / 12%);
+.floating-card {
+  box-shadow: var(--card-shadow);
   transition: transform 240ms ease, box-shadow 240ms ease;
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  :where(article, li, div, a):not(dialog):is(
-    [class~="shadow-sm"],
-    [class~="shadow-md"],
-    [class~="shadow-lg"],
-    [class~="shadow-xl"],
-    [class~="shadow-2xl"]
-  ):hover,
-  :where(article, li)[class*="rounded-"][class*="border-"]:hover,
-  :where(div)[class~="bg-white"][class*="rounded-"][class*="border-"]:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 30px rgb(28 54 66 / 18%);
+  .floating-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-raised);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(article, li, div, a):not(dialog):is(
-    [class~="shadow-sm"],
-    [class~="shadow-md"],
-    [class~="shadow-lg"],
-    [class~="shadow-xl"],
-    [class~="shadow-2xl"]
-  ),
-  :where(article, li)[class*="rounded-"][class*="border-"],
-  :where(div)[class~="bg-white"][class*="rounded-"][class*="border-"] {
+  .floating-card {
     transition: none;
     transform: none;
   }
+}
+
+:where(a, button, input, select, summary):focus-visible {
+  outline: 3px solid var(--color-brand-500);
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-ink-900);
 }
 
 :root:not(.dark) [class~="bg-white"] {
@@ -297,4 +293,12 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
+}
+
+h1 {
+  line-height: 1.1;
+}
+
+h2 {
+  text-wrap: balance;
 }
