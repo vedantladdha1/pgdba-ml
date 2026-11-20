@@ -31,9 +31,9 @@ const tickValues = axisTicks ?? [0, 0.25, 0.5, 0.75, 1].map((fraction) => maxVal
 const x = (index: number) => left + (chronologicalData.length === 1 ? chartWidth / 2 : (index * chartWidth) / (chronologicalData.length - 1));
 const y = (value: number) => top + chartHeight - (value / maxValue) * chartHeight;
 const series = [
-  { key: "max", label: "Max", color: "#15803d" },
-  { key: "mean", label: "Avg", color: "#eab308" },
-  { key: "median", label: "Median", color: "#1e3a8a" },
+  { key: "max", label: "Max", color: "var(--chart-max)" },
+  { key: "mean", label: "Avg", color: "var(--chart-mean)" },
+  { key: "median", label: "Median", color: "var(--chart-median)" },
 ] as const;
 const pathFor = (key: (typeof series)[number]["key"]) =>
   chronologicalData.map((row, index) => `${index === 0 ? "M" : "L"} ${x(index)} ${y(row[key])}`).join(" ");
@@ -47,19 +47,19 @@ const pathFor = (key: (typeof series)[number]["key"]) =>
       viewBox={`0 0 ${width} ${height}`}
       role="img"
       aria-label={`${title} line chart, years ${chronologicalData.map((row) => row.year).join(", ")}`}
-      class="h-auto min-w-[600px] w-full"
+    class="placement-chart h-auto min-w-[600px] w-full"
     >
       {tickValues.map((tickValue) => {
         const tickY = y(tickValue);
         return (
           <g>
-            <line x1={left} y1={tickY} x2={width - right} y2={tickY} stroke="#e5e7eb" stroke-width="1" />
-            <text x={left - 12} y={tickY + 4} text-anchor="end" fill="#64748b" font-size="12">{tickValue}</text>
+            <line x1={left} y1={tickY} x2={width - right} y2={tickY} stroke="var(--chart-grid)" stroke-width="1" />
+            <text x={left - 12} y={tickY + 4} text-anchor="end" fill="var(--chart-muted)" font-size="12">{tickValue}</text>
           </g>
         );
       })}
-      <line x1={left} y1={top} x2={left} y2={top + chartHeight} stroke="#94a3b8" stroke-width="1.5" />
-      <line x1={left} y1={top + chartHeight} x2={width - right} y2={top + chartHeight} stroke="#94a3b8" stroke-width="1.5" />
+      <line x1={left} y1={top} x2={left} y2={top + chartHeight} stroke="var(--chart-axis)" stroke-width="1.5" />
+      <line x1={left} y1={top + chartHeight} x2={width - right} y2={top + chartHeight} stroke="var(--chart-axis)" stroke-width="1.5" />
       {series.map((metric) => (
         <>
           <path d={pathFor(metric.key)} fill="none" stroke={metric.color} stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
@@ -72,11 +72,11 @@ const pathFor = (key: (typeof series)[number]["key"]) =>
         </>
       ))}
       {chronologicalData.map((row, index) => (
-        <text x={x(index)} y={top + chartHeight + 24} text-anchor="middle" fill="#334155" font-size="12">
+        <text x={x(index)} y={top + chartHeight + 24} text-anchor="middle" fill="var(--chart-label)" font-size="12">
           {row.year}
         </text>
       ))}
-      <text x={width / 2} y={height - 12} text-anchor="middle" fill="#64748b" font-size="12">Year</text>
+      <text x={width / 2} y={height - 12} text-anchor="middle" fill="var(--chart-muted)" font-size="12">Year</text>
     </svg>
   </div>
   <div class="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-base text-ink-700" aria-hidden="true">

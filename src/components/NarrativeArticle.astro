@@ -8,7 +8,7 @@ const { record: r } = Astro.props;
 const workExDomain = r.workExBackground?.trim() || "Not specified";
 ---
 
-<article class="floating-card flex h-full flex-col rounded-3xl border border-ink-100 bg-white shadow-sm">
+<article class="floating-card feature-card flex h-full flex-col rounded-3xl border border-ink-100 bg-white shadow-sm">
   <div class="flex-1 p-6 sm:p-8">
   <h3 class="font-display text-xl font-semibold text-ink-900">{r.name}</h3>
   {r.bio && <p class="mt-1 text-sm italic text-ink-500">{r.bio}</p>}

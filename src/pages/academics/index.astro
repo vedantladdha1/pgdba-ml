@@ -36,8 +36,8 @@ const totalCore = curriculum.reduce(
 
   <section id="institutes" class="mx-auto max-w-6xl scroll-mt-24 px-5 py-10 sm:py-14" aria-labelledby="institutes-heading">
     <div class="mb-7 max-w-3xl">
-      <p class="text-sm font-semibold uppercase tracking-wider text-brand-700">One programme · three institutions</p>
-      <h2 id="institutes-heading" class="mt-2 font-display text-3xl font-semibold text-ink-900 sm:text-4xl">
+      <p class="section-kicker">One programme · three institutions</p>
+      <h2 id="institutes-heading" class="section-heading mt-2 font-display text-3xl font-semibold text-ink-900 sm:text-4xl">
         Where the programme comes together<span class="text-brand-600">.</span>
       </h2>
       <p class="mt-3 leading-relaxed text-ink-600">
@@ -49,7 +49,7 @@ const totalCore = curriculum.reduce(
       {institutes.map((institute, index) => {
         const modules = curriculum.filter((module) => module.instituteSlug === institute.slug);
         return (
-          <article class="floating-card flex h-full flex-col rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-7">
+          <article class="floating-card feature-card flex h-full flex-col rounded-3xl border border-ink-200 bg-white p-6 shadow-sm sm:p-7">
             <p class="text-xs font-semibold uppercase tracking-[0.15em] text-brand-700">0{index + 1} · {institute.location}</p>
             <h3 class="mt-3 font-display text-2xl font-semibold text-ink-900">{institute.shortName}</h3>
             <p class="mt-2 text-sm font-semibold text-brand-700">{institute.focus}</p>
@@ -100,7 +100,7 @@ const totalCore = curriculum.reduce(
       { value: String(totalCore), label: "Listed core courses" },
       { value: "Industry", label: "Internship project" },
     ].map((stat) => (
-      <div class="floating-card rounded-2xl border border-ink-200 bg-white p-4 text-center shadow-sm sm:p-5">
+      <div class="floating-card metric-card rounded-2xl border border-ink-200 bg-white p-4 text-center shadow-sm sm:p-5">
         <p class="font-display text-2xl font-semibold text-brand-700 sm:text-3xl">{stat.value}</p>
         <p class="mt-1 text-sm text-ink-600">{stat.label}</p>
       </div>
@@ -110,7 +110,7 @@ const totalCore = curriculum.reduce(
   <section id="curriculum" class="mx-auto max-w-5xl scroll-mt-24 px-5 pb-16">
     <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <h2 class="font-display text-3xl font-semibold text-ink-900">Explore the semesters<span class="text-brand-600">.</span></h2>
+        <h2 class="section-heading font-display text-3xl font-semibold text-ink-900">Explore the semesters<span class="text-brand-600">.</span></h2>
         <p class="mt-2 text-ink-600">
           Select a module to see its institute and listed courses. {totalCourses} course entries, including the internship project.
         </p>
