@@ -92,7 +92,7 @@
   --chart-muted: #64748b;
   --chart-max: #166534;
   --chart-mean: #a16207;
-  --chart-median: #1d4ed8;
+  --chart-median: #1e3a8a;
 }
 
 :root.dark {
@@ -102,9 +102,9 @@
   --chart-axis: #8493a3;
   --chart-label: #e2e6ea;
   --chart-muted: #aeb8c4;
-  --chart-max: #86efac;
-  --chart-mean: #fde047;
-  --chart-median: #93c5fd;
+  --chart-max: #166534;
+  --chart-mean: #a16207;
+  --chart-median: #1e3a8a;
 }
 
 html {
